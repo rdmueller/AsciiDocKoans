@@ -16,13 +16,25 @@ include::solutions/00_test.adoc[tag=01]
 Now, here is the same paragraph without the bold and italics formatting.
 Try to apply the correct formatting (hint: look at the menu above the source code window ) to turn it green:
 
-[role=input]
+[.input]
 Some basic formattings are bold and italics.
 
-=== Strike through
+=== Strike through and highlight
+
+Bold and italic of often already enough for most documents.
+The following two examples show that even more is possible.
 
 include::solutions/00_test.adoc[tag=02]
 
-[role=input]
+[.input]
 Some advanced formatting is strike through.
+
+include::solutions/00_test.adoc[tag=03]
+
+[.input]
+And you can even highlight some text.
+
+The strike through example gives an advanced look behind the scenes of advanced formattings.
+The `line-through` in `\[.line-through]\#strike through#` is just the name of a class for the following text.
+This allows you to create your own styles.
 

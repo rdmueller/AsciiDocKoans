@@ -7,9 +7,6 @@
 Some basic formattings are *bold* and _italics_.
 //end::01[]
 
-[role=input]
-Some basic formattings are *bold* and _italics_.
-
 === Strike through
 
 //tag::02[]
@@ -17,5 +14,8 @@ Some basic formattings are *bold* and _italics_.
 Some advanced formatting is [.line-through]#strike through#.
 //end::02[]
 
-[role=input]
-Some advanced formatting is [.line-through]#strike through#.
+//tag::03[]
+[role=target]
+And you can even #highlight# some text.
+//end::03[]
+
