@@ -2,49 +2,17 @@
 
 === Basic Formattings
 
-[role=target]
-Some basic formattings are *bold* and _italics_.
+include::solutions/00_test.adoc[tag=01]
 
 [role=input]
-Some basic formattings are *bold* and _italics_.
+Some basic formattings are bold and italics.
 
 === Strike through
 
-[role=target]
-Some advanced formatting is [.line-through]#strike through#.
+include::solutions/00_test.adoc[tag=02]
 
 [role=input]
 Some advanced formatting is strike through.
 
-
-
-++++
-<script>
-var targets = document.getElementsByClassName('target');
-
-var getNextSibling = function (elem, selector) {
-
-	// Get the next sibling element
-	var sibling = elem.nextElementSibling;
-
-	// If the sibling matches our selector, use it
-	// If not, jump to the next sibling and continue the loop
-	while (sibling) {
-		if (sibling.matches(selector)) return sibling;
-		sibling = sibling.nextElementSibling
-	}
-
-};
-
-[].forEach.call(targets, function (target) {
-
-    var input = getNextSibling(target, '.input')
-    if (target.innerHTML === input.innerHTML) {
-        input.style.backgroundColor = '#88ff88';
-    } else {
-        input.style.backgroundColor = '#ff8888';
-    }
-});
-
-</script>
-++++
+//this checks your solutions
+include::mechanics/checkKoans.adoc[]
