@@ -1,0 +1,19 @@
+<textarea id="koan_0_0"></textarea>
+
+<div id="out_0_0"></div>
+
+<script src="../node_modules/@asciidoctor/core/dist/browser/asciidoctor.js"></script>
+
+<script>
+var asciidoctor = Asciidoctor();
+const content = 'http://asciidoctor.org[*Asciidoctor*] ' +
+  'running on https://opalrb.com[_Opal_] ' +
+  'brings AsciiDoc to Node.js!'
+	  
+//var html = doc.convert(doc, {doctype: 'inline'}); // call the "convert" method on the Asciidoctor.Document object "doc"
+//      document.getElementById('target').innerHTML = html;
+
+const html = asciidoctor.convert(content); 
+console.log(html) ;
+document.getElementById('out_0_0').innerHTML=html;
+</script>
