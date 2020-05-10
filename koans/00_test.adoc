@@ -13,6 +13,3 @@ include::solutions/00_test.adoc[tag=02]
 
 [role=input]
 Some advanced formatting is strike through.
-
-//this checks your solutions
-include::mechanics/checkKoans.adoc[]
