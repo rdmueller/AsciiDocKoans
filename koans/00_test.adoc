@@ -1,26 +1,20 @@
 == Introduction
 
-****
 Welcome to the AsciiDoc-Koans.
 This collection of tasks will walk you through the features of AsciiDoc.
 For each task, the is a paragraph given which you should meditate on and try to rebuild with your AsciiDoc knowledge.
 
 Here is an example:
-****
 
 === Basic Formattings
 
-****
 The following include statement fetches the target paragraph which you should re-build with your AsciiDoc knowledge.
 On the left sie of your editor window, you will see it as `include`-statement, while on the right -- the preview -- you will see it rendered.
-****
 
 include::solutions/00_test.adoc[tag=01]
 
-****
 Now, here is the same paragraph without the bold and italics formatting.
 Try to apply the correct formatting (hint: look at the menu above the source code window ) to turn it green:
-****
 
 [role=input]
 Some basic formattings are bold and italics.
