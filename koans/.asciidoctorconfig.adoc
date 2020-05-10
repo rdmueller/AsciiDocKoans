@@ -1,0 +1,34 @@
+++++
+<style>
+div.target {
+    border: 1px solid #888888;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+div.target:before {
+    content: 'target';
+    font-family: arial, sans-serif;
+    background-color: white;
+    position: relative;
+    top: -18px;
+    padding: 3px 6px;
+    width: 30px;
+}
+div.input {
+    border: 2px solid #888888;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+div.input:before {
+    content: 'your result';
+    font-family: arial, sans-serif;
+    background-color: white;
+    position: relative;
+    top: -18px;
+    padding: 3px 6px;
+    width: 30px;
+}
+</style>
+++++

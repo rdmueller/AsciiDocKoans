@@ -20,9 +20,9 @@ var getNextSibling = function (elem, selector) {
 
     var input = getNextSibling(target, '.input')
     if (target.innerHTML === input.innerHTML) {
-        input.style.backgroundColor = '#88ff88';
+        input.style.borderColor = '#88ff88';
     } else {
-        input.style.backgroundColor = '#ff8888';
+        input.style.borderColor = '#ff8888';
     }
 });
 
