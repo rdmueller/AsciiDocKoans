@@ -1,36 +1,4 @@
 ++++
-<style>
-div.target {
-    border: 1px solid #888888;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-div.target:before {
-    content: 'target';
-    font-family: arial, sans-serif;
-    background-color: white;
-    position: relative;
-    top: -18px;
-    padding: 3px 6px;
-    width: 30px;
-}
-div.input {
-    border: 2px solid #888888;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-div.input:before {
-    content: 'your result';
-    font-family: arial, sans-serif;
-    background-color: white;
-    position: relative;
-    top: -18px;
-    padding: 3px 6px;
-    width: 30px;
-}
-</style>
 <script>
 // when changing this script, the HTML preview in the IntelliJ AsciiDoc plugin will not refresh its contents
 // until you close and re-open the editor OR disable the option "refresh preview contents without flicker"
@@ -56,9 +24,9 @@ function check() {
 
         var input = getNextSibling(target, '.input')
         if (target.innerHTML === input.innerHTML) {
-            input.style.borderColor = '#88ff88';
+            input.style.backgroundColor = '#88ff88';
         } else {
-            input.style.borderColor = '#ff8888';
+            input.style.backgroundColor = '#ff8888';
         }
     });
 }
@@ -77,5 +45,4 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 </script>
-
 ++++

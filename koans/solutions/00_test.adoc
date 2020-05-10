@@ -19,5 +19,3 @@ Some advanced formatting is [.line-through]#strike through#.
 
 [role=input]
 Some advanced formatting is [.line-through]#strike through#.
-
-include::../mechanics/checkKoans.adoc[]
