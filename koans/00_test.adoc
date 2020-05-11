@@ -14,20 +14,34 @@ On the left sie of your editor window, you will see it as `include`-statement, w
 include::solutions/00_test.adoc[tag=01]
 
 Now, here is the same paragraph without the bold and italics formatting.
-Try to apply the correct formatting (hint: look at the menu above the source code window ) to turn it green:
+Try to apply the correct formatting (hint: look at the menu above the source code window image:images/file.png[width=60]) to turn it green:
 
 [.input]
 Some basic formattings are bold and italics.
 
+Great! So let's go a bit further...
+
 === Sentences and Paragraphs
+
+Sentences and paragraphs are really important to understand.
 
 include::solutions/00_test.adoc[tag=04]
 
+This is already green, because ther is nothing special.
 [.input]
 --
 Two sentences across several lines.
 They are all displayed as one paragraph.
 --
+
+But you should get used to it.
+Two sentences on seperate lines will be shown as one paragraph.
+The line break is not visible in the output.
+
+Use it to format your text one sentence (or half-sentence if you tend to create longer ones) per line.
+This will result in nicer diffs when you put your documentation under vresion control.
+
+Now, how do you create two paragraphs?
 
 include::solutions/00_test.adoc[tag=05]
 
@@ -37,8 +51,11 @@ Two sentences displayed as two paragraphs.
 The additional space between them shows visually that they are distinct.
 --
 
+And if you want to add an extra line break without a new paragraph?
+
 include::solutions/00_test.adoc[tag=06]
 
+TIP: here are two extra line breaks hidden
 [.input]
 --
 Sometimes you don't want a new paragraph but just a new line.
