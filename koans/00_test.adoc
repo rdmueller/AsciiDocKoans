@@ -1,7 +1,7 @@
 == Introduction
 
 Welcome to the AsciiDoc-Koans.
-This collection of tasks will walk you through the features of AsciiDoc.
+This collection of tasks will walk you through the most important features of AsciiDoc.
 For each task, the is a paragraph given which you should meditate on and try to rebuild with your AsciiDoc knowledge.
 
 Here is an example:
@@ -20,6 +20,8 @@ Try to apply the correct formatting (hint: look at the menu above the source cod
 Some basic formattings are bold and italics.
 
 Great! So let's go a bit further...
+
+If you are stuck and want to reveal the solution, kbd:[ctrl]-click the include file to see it.
 
 === Sentences and Paragraphs
 

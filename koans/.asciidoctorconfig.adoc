@@ -1,3 +1,7 @@
+:experimental:
+:toc: left
+:toc:
+
 ++++
 <style>
 div.target {
