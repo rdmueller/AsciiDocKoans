@@ -19,7 +19,34 @@ Try to apply the correct formatting (hint: look at the menu above the source cod
 [.input]
 Some basic formattings are bold and italics.
 
-=== Strike through and highlight
+=== Sentences and Paragraphs
+
+include::solutions/00_test.adoc[tag=04]
+
+[.input]
+--
+Two sentences across several lines.
+They are all displayed as one paragraph.
+--
+
+include::solutions/00_test.adoc[tag=05]
+
+[.input]
+--
+Two sentences displayed as two paragraphs.
+The additional space between them shows visually that they are distinct.
+--
+
+include::solutions/00_test.adoc[tag=06]
+
+[.input]
+--
+Sometimes you don't want a new paragraph but just a new line.
+The space between these two lines is just if there was an automatic break within a paragraph.
+--
+
+
+=== Bonus: Strike through and highlight
 
 Bold and italic of often already enough for most documents.
 The following two examples show that even more is possible.
@@ -35,6 +62,6 @@ include::solutions/00_test.adoc[tag=03]
 And you can even highlight some text.
 
 The strike through example gives an advanced look behind the scenes of advanced formattings.
-The `line-through` in `\[.line-through]\#strike through#` is just the name of a class for the following text.
+The `line-through` in `[.line-through]\#strike through#` is just the name of a class for the following text.
 This allows you to create your own styles.
 

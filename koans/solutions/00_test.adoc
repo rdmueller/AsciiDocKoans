@@ -3,19 +3,47 @@
 === Basic Formattings
 
 //tag::01[]
-[role=target]
+[.target]
 Some basic formattings are *bold* and _italics_.
 //end::01[]
+
+=== Sentences and Paragraphs
+
+//tag::04[]
+[.target]
+--
+Two sentences across several lines.
+They are all displayed as one paragraph.
+--
+//end::04[]
+
+//tag::05[]
+[.target]
+--
+Two sentences displayed as two paragraphs.
+
+The additional space between them shows visually that they are distinct.
+--
+//end::05[]
+
+//tag::06[]
+[.target]
+--
+Sometimes you don't want a new paragraph +
+but just a new line. +
+The space between these two lines is just if there was an automatic break within a paragraph.
+--
+//end::06[]
 
 === Strike through
 
 //tag::02[]
-[role=target]
+[.target]
 Some advanced formatting is [.line-through]#strike through#.
 //end::02[]
 
 //tag::03[]
-[role=target]
+[.target]
 And you can even #highlight# some text.
 //end::03[]
 

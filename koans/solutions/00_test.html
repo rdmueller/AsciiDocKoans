@@ -495,11 +495,11 @@ function check() {
 
     [].forEach.call(targets, function (target) {
 
-        var targetHTML = target.innerHTML.replace(/data-line-[^ "]+/,'');
+        var targetHTML = target.innerHTML.replace(/data-line-[^ "]/,'');
         var input = getNextSibling(target, '.input');
-        var inputHTML = input.innerHTML.replace(/data-line-[^ "]+/,'');
+        var inputHTML = input.innerHTML.replace(/data-line-[^ "]/,'');
         //useful for debugging
-        //document.write('<textarea style="width: 100%; height:100%">'+inputHTML+"\n"+targetHTML);
+        document.write('<textarea style="width: 100%; height:100%">'+inputHTML+"\n"+targetHTML);
         if (targetHTML === inputHTML) {
             input.style.borderColor = '#88ff88';
         } else {
@@ -525,29 +525,10 @@ document.addEventListener("DOMContentLoaded", function() {
 <div class="sect1">
 <h2 id="_introduction">Introduction</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Welcome to the AsciiDoc-Koans.
-This collection of tasks will walk you through the features of AsciiDoc.
-For each task, the is a paragraph given which you should meditate on and try to rebuild with your AsciiDoc knowledge.</p>
-</div>
-<div class="paragraph">
-<p>Here is an example:</p>
-</div>
 <div class="sect2">
 <h3 id="_basic_formattings">Basic Formattings</h3>
-<div class="paragraph">
-<p>The following include statement fetches the target paragraph which you should re-build with your AsciiDoc knowledge.
-On the left sie of your editor window, you will see it as <code>include</code>-statement, while on the right&#8201;&#8212;&#8201;the preview&#8201;&#8212;&#8201;you will see it rendered.</p>
-</div>
-<div class="paragraph target">
+<div class="paragraph target-">
 <p>Some basic formattings are <strong>bold</strong> and <em>italics</em>.</p>
-</div>
-<div class="paragraph">
-<p>Now, here is the same paragraph without the bold and italics formatting.
-Try to apply the correct formatting (hint: look at the menu above the source code window ) to turn it green:</p>
-</div>
-<div class="paragraph input">
-<p>Some basic formattings are bold and italics.</p>
 </div>
 </div>
 <div class="sect2">
@@ -560,29 +541,13 @@ They are all displayed as one paragraph.</p>
 </div>
 </div>
 </div>
-<div class="openblock input">
-<div class="content">
-<div class="paragraph">
-<p>Two sentences across several lines.
-They are all displayed as one paragraph.</p>
-</div>
-</div>
-</div>
-<div class="openblock target">
+<div class="openblock target-">
 <div class="content">
 <div class="paragraph">
 <p>Two sentences displayed as two paragraphs.</p>
 </div>
 <div class="paragraph">
 <p>The additional space between them shows visually that they are distinct.</p>
-</div>
-</div>
-</div>
-<div class="openblock input">
-<div class="content">
-<div class="paragraph">
-<p>Two sentences displayed as two paragraphs.
-The additional space between them shows visually that they are distinct.</p>
 </div>
 </div>
 </div>
@@ -595,37 +560,14 @@ The space between these two lines is just if there was an automatic break within
 </div>
 </div>
 </div>
-<div class="openblock input">
-<div class="content">
-<div class="paragraph">
-<p>Sometimes you don&#8217;t want a new paragraph but just a new line.
-The space between these two lines is just if there was an automatic break within a paragraph.</p>
-</div>
-</div>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_bonus_strike_through_and_highlight">Bonus: Strike through and highlight</h3>
-<div class="paragraph">
-<p>Bold and italic of often already enough for most documents.
-The following two examples show that even more is possible.</p>
-</div>
+<h3 id="_strike_through">Strike through</h3>
 <div class="paragraph target">
 <p>Some advanced formatting is <span class="line-through">strike through</span>.</p>
 </div>
-<div class="paragraph input">
-<p>Some advanced formatting is strike through.</p>
-</div>
 <div class="paragraph target">
 <p>And you can even <mark>highlight</mark> some text.</p>
-</div>
-<div class="paragraph input">
-<p>And you can even highlight some text.</p>
-</div>
-<div class="paragraph">
-<p>The strike through example gives an advanced look behind the scenes of advanced formattings.
-The <code>line-through</code> in <code>[.line-through]#strike through#</code> is just the name of a class for the following text.
-This allows you to create your own styles.</p>
 </div>
 </div>
 </div>
@@ -633,7 +575,7 @@ This allows you to create your own styles.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-11 10:30:18 +0200
+Last updated 2020-05-11 10:53:23 +0200
 </div>
 </div>
 </body>

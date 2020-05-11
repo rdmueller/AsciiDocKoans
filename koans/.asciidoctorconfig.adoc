@@ -54,8 +54,12 @@ function check() {
 
     [].forEach.call(targets, function (target) {
 
-        var input = getNextSibling(target, '.input')
-        if (target.innerHTML === input.innerHTML) {
+        var targetHTML = target.innerHTML.replace(/data-line-[^ "]+/,'');
+        var input = getNextSibling(target, '.input');
+        var inputHTML = input.innerHTML.replace(/data-line-[^ "]+/,'');
+        //useful for debugging
+        //document.write('<textarea style="width: 100%; height:100%">'+inputHTML+"\n"+targetHTML);
+        if (targetHTML === inputHTML) {
             input.style.borderColor = '#88ff88';
         } else {
             input.style.borderColor = '#ff8888';
