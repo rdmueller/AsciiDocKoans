@@ -30,6 +30,7 @@ Sentences and paragraphs are really important to understand.
 include::solutions/00_test.adoc[tag=04]
 
 This is already green, because there is nothing special.
+
 [.input]
 --
 Two sentences across several lines.

@@ -34,6 +34,16 @@ div.input:before {
     padding: 3px 6px;
     width: 30px;
 }
+div.input.correct:before {
+    content: 'correct';
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    background-color: white;
+    position: relative;
+    top: -18px;
+    padding: 3px 6px;
+    width: 30px;
+}
 </style>
 <script>
 // when changing this script, the HTML preview in the IntelliJ AsciiDoc plugin will not refresh its contents
@@ -58,15 +68,24 @@ function check() {
 
     [].forEach.call(targets, function (target) {
 
-        var targetHTML = target.innerHTML.replace(/data-line-[^ "]+/,'');
+        //get both converted HTML fragments
+        //and remove unwanted differences
+        var targetHTML = target.innerHTML.replace(/data-line-[^ "]+/g,'');
         var input = getNextSibling(target, '.input');
-        var inputHTML = input.innerHTML.replace(/data-line-[^ "]+/,'');
+        var inputHTML = input.innerHTML.replace(/data-line-[^ "]+/g,'');
+        targetHTML = targetHTML.replace(/  +/g,' ');
+        inputHTML = inputHTML.replace(/  +/g,' ');
+        targetHTML = targetHTML.replace(/\r/g,'');
+        inputHTML = inputHTML.replace(/\r/g,'');
         //useful for debugging
         //document.write('<textarea style="width: 100%; height:100%">'+inputHTML+"\n"+targetHTML);
         if (targetHTML === inputHTML) {
+            //correct
             input.style.borderColor = '#88ff88';
+            input.classList.add("correct");
         } else {
             input.style.borderColor = '#ff8888';
+            input.classList.remove("correct");
         }
     });
 }
