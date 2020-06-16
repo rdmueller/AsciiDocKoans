@@ -35,6 +35,39 @@ The space between these two lines is just if there was an automatic break within
 --
 //end::06[]
 
+//tag::07[]
+[.target]
+As a developer, chance are that you want to format some words with a `mono-spaced` font to show that this is code.
+//end::07[]
+
+//tag::08[]
+[.target]
+```
+10 print "Hello World"
+20 goto 10
+```
+//end::08[]
+
+//tag::09[]
+[.target]
+[source, groovy]
+----
+10.times {
+    println "Hello World"
+}
+----
+//end::09[]
+
+//tag::10[]
+[.target]
+[source, groovy, linenums]
+----
+10.times {
+    println "Hello World"
+}
+----
+//end::10[]
+
 === Strike through
 
 //tag::02[]

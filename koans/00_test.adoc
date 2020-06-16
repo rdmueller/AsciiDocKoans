@@ -29,12 +29,10 @@ Sentences and paragraphs are really important to understand.
 
 include::solutions/00_test.adoc[tag=04]
 
-This is already green, because there is nothing special.
-
+Split the following two sentences so that each has its own line.
 [.input]
 --
-Two sentences across several lines.
-They are all displayed as one paragraph.
+Two sentences across several lines. They are all displayed as one paragraph.
 --
 
 But you should get used to it.
@@ -42,7 +40,10 @@ Two sentences on seperate lines will be shown as one paragraph.
 The line break is not visible in the output.
 
 Use it to format your text one sentence (or half-sentence if you tend to create longer ones) per line.
-This will result in nicer diffs when you put your documentation under vresion control.
+This will result in nicer diffs when you put your documentation under version control.
+
+To avoid having to scroll lines with longer sentences, make sure that you have soft wraps activated.
+Click on the image:images/softwrap.png[width=30]-icon in IntelliJ.
 
 Now, how do you create two paragraphs?
 
@@ -65,10 +66,55 @@ Sometimes you don't want a new paragraph but just a new line.
 The space between these two lines is just if there was an automatic break within a paragraph.
 --
 
+=== Code
+
+include::solutions/00_test.adoc[tag=07]
+
+[.input]
+As a developer, chance are that you want to format some words with a mono-spaced font to show that this is code.
+
+But inline might not be enough if you want to show small code examples.
+
+include::solutions/00_test.adoc[tag=08]
+
+[.input]
+10 print "Hello World"
+20 goto 10
+
+There are two ways to get the same result - can you figure out the second one?
+
+include::solutions/00_test.adoc[tag=08]
+
+[.input]
+10 print "Hello World"
+20 goto 10
+
+
+The simpler version is the markdown-style syntax for listings and IntelliJ will show it on yellow background as _warning_.
+
+Let's add some syntax highlighting.
+
+include::solutions/00_test.adoc[tag=09]
+
+TIP: this example is written in Groovy
+
+[.input]
+10.times {
+    println "Hello World"
+}
+
+How about line numbers?
+
+include::solutions/00_test.adoc[tag=10]
+
+[.input]
+10.times {
+println "Hello World"
+}
 
 === Bonus: Strike through and highlight
 
-Bold and italic of often already enough for most documents.
+Bold and italic are often already enough for most documents.
 The following two examples show that even more is possible.
 
 include::solutions/00_test.adoc[tag=02]
@@ -81,7 +127,7 @@ include::solutions/00_test.adoc[tag=03]
 [.input]
 And you can even highlight some text.
 
-The strike through example gives an advanced look behind the scenes of advanced formattings.
+The strike through example gives a look behind the scenes of advanced formattings.
 The `line-through` in `[.line-through]\#strike through#` is just the name of a class for the following text.
-This allows you to create your own styles.
+This also allows you to create your own styles.
 
