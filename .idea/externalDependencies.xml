@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalDependencies">
+    <plugin id="org.asciidoctor.intellij.asciidoc" min-version="0.30.73" />
+  </component>
+</project>
