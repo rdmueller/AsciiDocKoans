@@ -1,0 +1,102 @@
+<html>
+<head>
+    <script src="dist/browser/asciidoctor.js"></script>
+    <link rel="stylesheet" href="dist/css/asciidoctor.css"></link>
+    <style>
+        div#target {
+            border: 1px solid #888888;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        div#target:before {
+            content: 'target';
+            font-family: arial, sans-serif;
+            background-color: white;
+            position: relative;
+            top: -18px;
+            padding: 3px 6px;
+            width: 30px;
+        }
+        div#input {
+            border: 2px solid #888888;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        div#input:before {
+            content: 'your result';
+            font-family: arial, sans-serif;
+            background-color: white;
+            position: relative;
+            top: -18px;
+            padding: 3px 6px;
+            width: 30px;
+        }
+        div#input.correct:before {
+            content: 'correct';
+            font-family: arial, sans-serif;
+            font-weight: bold;
+            background-color: white;
+            position: relative;
+            top: -18px;
+            padding: 3px 6px;
+            width: 30px;
+        }
+        body {
+            padding: 20px 20px;
+        }
+        #plain {
+            height: 10em;
+            font-family: Monospaced, monospace;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+<body>
+<div id="target">
+Some basic formattings are *bold* and _italics_.
+</div>
+<div id="input"></div>
+<textarea id="plain" style="width: 100%;" onkeyup="convert();">
+Some basic formattings are bold and italics.
+</textarea>
+</body>
+<script>
+    var targetHtml = ""
+    function init() {
+        console.log("init");
+        var asciidoctor = Asciidoctor();
+        var content = document.getElementById('target').innerHTML;
+        targetHtml = asciidoctor.convert(content, {to: 'html5'});
+        targetHtml = targetHtml.replace(/  +/g,' ');
+        targetHtml = targetHtml.replace(/\r/g,'');
+        document.getElementById('target').innerHTML = targetHtml;
+        document.getElementById('plain').focus();
+    }
+    function convert() {
+        console.log("convert");
+        var asciidoctor = Asciidoctor();
+        var content = document.getElementById('plain').value;
+        var inputHtml = asciidoctor.convert(content, {to: 'html5'});
+        document.getElementById('input').innerHTML = inputHtml;
+        var input = document.getElementById('input')
+        inputHtml = inputHtml.replace(/  +/g,' ');
+        inputHtml = inputHtml.replace(/\r/g,'');
+        console.log(inputHtml);
+        console.log(targetHtml);
+        if (targetHtml === inputHtml) {
+            //correct
+            input.style.borderColor = '#88ff88';
+            input.classList.add("correct");
+        } else {
+            input.style.borderColor = '#ff8888';
+            input.classList.remove("correct");
+        }
+
+
+    };
+    init();
+    convert();
+</script>
+</html>
