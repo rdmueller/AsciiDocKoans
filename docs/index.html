@@ -3,13 +3,13 @@
     <script src="asciidoctor/browser/asciidoctor.js"></script>
     <link rel="stylesheet" href="asciidoctor/css/asciidoctor.css"></link>
     <style>
-        div#target {
+        div#myTarget {
             border: 1px solid #888888;
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
         }
-        div#target:before {
+        div#myTarget:before {
             content: 'target';
             font-family: arial, sans-serif;
             background-color: white;
@@ -54,37 +54,53 @@
     </style>
 </head>
 <body>
-<div id="target">
-Some basic formattings are *bold* and _italics_.
+<div id="description">
+loading koan...
 </div>
+<div id="myTarget"></div>
+<div id="hint"></div>
 <div id="input"></div>
 <textarea id="plain" style="width: 100%;" onkeyup="convert();">
-Some basic formattings are bold and italics.
 </textarea>
 </body>
 <script>
     var targetHtml = ""
+    var asciidoctor = Asciidoctor();
+
     function init() {
         console.log("init");
-        var asciidoctor = Asciidoctor();
-        var content = document.getElementById('target').innerHTML;
-        targetHtml = asciidoctor.convert(content, {to: 'html5'});
-        targetHtml = targetHtml.replace(/  +/g,' ');
-        targetHtml = targetHtml.replace(/\r/g,'');
-        document.getElementById('target').innerHTML = targetHtml;
         document.getElementById('plain').focus();
+        targetHtml = document.getElementById('myTarget').innerHTML
     }
+    fetch("koans/koan_1.adoc")
+        .then(function(response) {
+            if (response.ok) {
+                return response.text();
+            } else {
+                alert("HTTP-Error: " + response.status);
+            }
+        })
+        .then(function(koan) {
+            koan = koan.split("'''")
+            var description = document.getElementById('description');
+            description.innerHTML = asciidoctor.convert(":imagesdir: images\n\n"+koan[0], {to: 'html5'});
+            var myTarget = document.getElementById('myTarget');
+            console.log(asciidoctor.convert(koan[1], {to: 'html5'}))
+            myTarget.innerHTML = asciidoctor.convert(koan[1], {to: 'html5'});
+            var hint = document.getElementById('hint');
+            hint.innerHTML = asciidoctor.convert(":imagesdir: images\n\n"+koan[2], {to: 'html5'});
+            var plain = document.getElementById('plain');
+            plain.value = koan[3];
+            init();
+            convert();
+        });
+
     function convert() {
         console.log("convert");
-        var asciidoctor = Asciidoctor();
         var content = document.getElementById('plain').value;
         var inputHtml = asciidoctor.convert(content, {to: 'html5'});
         document.getElementById('input').innerHTML = inputHtml;
         var input = document.getElementById('input')
-        inputHtml = inputHtml.replace(/  +/g,' ');
-        inputHtml = inputHtml.replace(/\r/g,'');
-        console.log(inputHtml);
-        console.log(targetHtml);
         if (targetHtml === inputHtml) {
             //correct
             input.style.borderColor = '#88ff88';

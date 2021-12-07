@@ -1,0 +1,27 @@
+ifndef::imagesdir[:imagesdir: ../images]
+== Introduction
+
+Welcome to the AsciiDoc-Koans.
+This collection of tasks will walk you through the most important features of AsciiDoc.
+For each task, the is a paragraph given which you should meditate on and try to rebuild with your AsciiDoc knowledge.
+
+Here is an example:
+
+=== Basic Formattings
+
+Try to produce the following output.
+
+'''
+//solution
+Some basic formats are *bold* and _italics_.
+
+'''
+//hint
+
+Now, here is the same paragraph without the bold and italics formatting.
+Try to apply the correct formatting to turn it green:
+
+'''
+// your input
+
+Some basic formats are bold and italics.
