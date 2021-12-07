@@ -45,11 +45,55 @@
         }
         body {
             padding: 20px 20px;
+            height: 100vh;
+            widht: 100vw;
+        }
+        html{
+            position: relative;
+            height: 100vh;
+            widht: 100vw;
         }
         #plain {
             height: 10em;
             font-family: Monospaced, monospace;
             padding: 2px 4px;
+        }
+        #nextDialog {
+
+            border: 2px solid #888888;
+            border-radius: 10px;
+            position: fixed;
+            top: 30%;
+            bottom: 30%;
+            left:20%;
+            right: 20%;
+            background-color: rgba(175, 220, 185, 0.9);
+            text-align: center;
+            display: none;
+        }
+        #nextDialog.display {
+            display: block !important;
+        }
+        #next {
+            position: absolute;
+            top: 5%;
+            bottom: 30%;
+            left:5%;
+            right: 5%;
+            text-align: center;
+        }
+        #nextDialog button {
+            border: 2px solid #888888;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 5%;
+            width: 8em;
+            margin-left: auto;
+            margin-right: auto;
+            left: 5%;
+            right: 5%;
+            padding: 5px 10px;
+            font-family: Arial, sans-serif;
         }
     </style>
 </head>
@@ -62,8 +106,11 @@ loading koan...
 <div id="input"></div>
 <textarea id="plain" style="width: 100%;" onkeyup="convert();">
 </textarea>
+
+<div id="nextDialog"><div id="next"></div><button onclick="next();">Next</button></div>
 </body>
 <script>
+    var koanNum = 1;
     var targetHtml = ""
     var asciidoctor = Asciidoctor();
 
@@ -72,29 +119,32 @@ loading koan...
         document.getElementById('plain').focus();
         targetHtml = document.getElementById('myTarget').innerHTML
     }
-    fetch("koans/koan_1.adoc")
-        .then(function(response) {
-            if (response.ok) {
-                return response.text();
-            } else {
-                alert("HTTP-Error: " + response.status);
-            }
-        })
-        .then(function(koan) {
-            koan = koan.split("'''")
-            var description = document.getElementById('description');
-            description.innerHTML = asciidoctor.convert(":imagesdir: images\n\n"+koan[0], {to: 'html5'});
-            var myTarget = document.getElementById('myTarget');
-            console.log(asciidoctor.convert(koan[1], {to: 'html5'}))
-            myTarget.innerHTML = asciidoctor.convert(koan[1], {to: 'html5'});
-            var hint = document.getElementById('hint');
-            hint.innerHTML = asciidoctor.convert(":imagesdir: images\n\n"+koan[2], {to: 'html5'});
-            var plain = document.getElementById('plain');
-            plain.value = koan[3];
-            init();
-            convert();
-        });
-
+    function getKoan() {
+        fetch("koans/koan_"+koanNum+".adoc")
+            .then(function (response) {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    alert("HTTP-Error: " + response.status);
+                }
+            })
+            .then(function (koan) {
+                koan = koan.split("'''")
+                var description = document.getElementById('description');
+                description.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + koan[0], {to: 'html5'});
+                var myTarget = document.getElementById('myTarget');
+                console.log(asciidoctor.convert(koan[1], {to: 'html5'}))
+                myTarget.innerHTML = asciidoctor.convert(koan[1], {to: 'html5'});
+                var hint = document.getElementById('hint');
+                hint.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + koan[2], {to: 'html5'});
+                var plain = document.getElementById('plain');
+                plain.value = koan[3];
+                var next = document.getElementById('next');
+                next.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + koan[4], {to: 'html5'});
+                init();
+                convert();
+            });
+    }
     function convert() {
         console.log("convert");
         var content = document.getElementById('plain').value;
@@ -105,14 +155,19 @@ loading koan...
             //correct
             input.style.borderColor = '#88ff88';
             input.classList.add("correct");
+            document.getElementById('nextDialog').classList.add("display");
         } else {
             input.style.borderColor = '#ff8888';
             input.classList.remove("correct");
+            document.getElementById('nextDialog').classList.remove("display");
         }
 
-
     };
-    init();
-    convert();
+    function next() {
+        koanNum++;
+        document.getElementById('nextDialog').classList.remove("display");
+        getKoan();
+    }
+    getKoan();
 </script>
 </html>

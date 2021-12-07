@@ -1,0 +1,35 @@
+ifndef::imagesdir[:imagesdir: ../images]
+== AsciiDoc Koans
+
+=== Basic Formattings
+
+Great! So let's go a bit further...
+
+If you are stuck and want to reveal the solution, kbd:[ctrl]-click the include file to see it.
+
+=== Sentences and Paragraphs
+
+Sentences and paragraphs are really important to understand.
+
+Split the following two sentences so that each has its own line.
+
+'''
+//solution
+
+Two sentences across several lines.
+
+They are all displayed as one paragraph.
+
+'''
+//hint
+But you should get used to it.
+
+'''
+Two sentences across several lines.
+They are all displayed as one paragraph.
+
+'''
+// next task
+=== correct!
+Two sentences on seperate lines will be shown as one paragraph.
+The line break is not visible in the output.
