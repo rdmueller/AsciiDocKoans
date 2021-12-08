@@ -1,31 +1,35 @@
 ifndef::imagesdir[:imagesdir: ../images]
-== Introduction
+== AsciiDoc lernen mit Koans footnote:[https://de.wikipedia.org/wiki/K%C5%8Dan[Wikippedia: Koan]]
 
-Welcome to the AsciiDoc-Koans.
-This collection of tasks will walk you through the most important features of AsciiDoc.
-For each task, the is a paragraph given which you should meditate on and try to rebuild with your AsciiDoc knowledge.
+Dieses interaktive Tutorial vermittelt die wichtigsten Elemente der AsciiDoc Syntax.
+Jede Seite formuliert eine kleine Aufgabe, indem ein in AsciiDoc formatiertes Ergebnis gezeigt wird.
 
-Here is an example:
+Deine Aufgabe ist es, eine Ausgangstext mit AsciiDoc so zu formatieren, dass er dem gewünschten Ergebnis entspricht.
+Ist dies geschafft, färbt sich der ursprünglich rote Rahmen grün und es geht weiter zur nächsten Aufgabe.
 
-=== Basic Formattings
+Wir fangen an mit...
 
-Try to produce the following output.
+=== Einfache Formatierungen
+
+Ändere den untenstehenden Text so ab, dass die Worte, wie im folgenden Beispiel, fett bzw. kursiv dargestellt werden.
 
 '''
 //solution
-Some basic formats are *bold* and _italics_.
+Einfache Formatierungen sind *fett* und _kursiv_ oder `monospace`.
 
 '''
 //hint
 
-Now, here is the same paragraph without the bold and italics formatting.
-Try to apply the correct formatting to turn it green:
+Hier ist nun der unformatierte Satz und Dein Eingabefeld.
+Ändere den Quelltext so, dass der formatierte Text dem obigen Ergebnis entspricht.footnote:[https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#text-formatting[Dokumentation]]
 
 '''
-// your input
+// Deine Eingabe
 
-Some basic formats are bold and italics.
+Einfache Formatierungen sind fett und kursiv oder monospace.
 
 '''
 // next task
-== Well done!
+== Sehr gut!
+
+Dann gehen wir mal zur zweiten Aufgabe

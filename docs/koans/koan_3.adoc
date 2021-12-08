@@ -1,0 +1,34 @@
+ifndef::imagesdir[:imagesdir: ../images]
+== AsciiDoc lernen mit Koans footnote:[https://de.wikipedia.org/wiki/K%C5%8Dan[Wikippedia: Koan]]
+
+Links bilden den Kern von HTML.
+
+=== Links
+
+Ändere den untenstehenden Text so ab, der Text wie gezeigt auf https://google.de verlinkt.
+
+'''
+//solution
+Ein einfacher Link sieht wie folgt aus: https://google.de
+
+Es lässt sich aber auch ein beliebiger Text verlinken: https://google.de[Google]
+
+'''
+//hint
+
+Und jetzt Du!footnote:[https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#links[Dokumentation]]
+
+'''
+// Deine Eingabe
+
+Ein einfacher Link sieht wie folgt aus:
+
+Es lässt sich aber auch ein beliebiger Text verlinken:
+
+'''
+// next task
+== Super
+
+Das ging schnell
+
+Das war auch schon die letzte Aufgabe.

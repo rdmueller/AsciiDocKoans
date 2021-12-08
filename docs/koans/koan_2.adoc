@@ -1,35 +1,37 @@
 ifndef::imagesdir[:imagesdir: ../images]
-== AsciiDoc Koans
+== AsciiDoc lernen mit Koans footnote:[https://de.wikipedia.org/wiki/K%C5%8Dan[Wikippedia: Koan]]
 
-=== Basic Formattings
+Absätze verhalten sich anders, als erwartet.
 
-Great! So let's go a bit further...
+=== Absätze
 
-If you are stuck and want to reveal the solution, kbd:[ctrl]-click the include file to see it.
+Wie auch bei Markdown, sind Absätze anfangs gewöhnungsbedürftig.
 
-=== Sentences and Paragraphs
-
-Sentences and paragraphs are really important to understand.
-
-Split the following two sentences so that each has its own line.
+Versuche die folgende Formatierung des bekannten Zitats zu erreichen.
+Dabei musst Du den Text in zwei Absätze aufteilen und im zweiten Absatz einen Zeilenumbruch einfügen.
 
 '''
 //solution
+Eine erste Zeile in einem ersten Absatz.
 
-Two sentences across several lines.
-
-They are all displayed as one paragraph.
+Eine zweite Zeile und +
+eine dritte Zeile in einem zweiten Absatz.
 
 '''
 //hint
-But you should get used to it.
+
+Und jetzt Du!footnote:[https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#paragraphs[Dokumentation]]
 
 '''
-Two sentences across several lines.
-They are all displayed as one paragraph.
+// Deine Eingabe
+
+Eine erste Zeile in einem ersten Absatz.
+Eine zweite Zeile und
+eine dritte Zeile in einem zweiten Absatz.
 
 '''
 // next task
-=== correct!
-Two sentences on seperate lines will be shown as one paragraph.
-The line break is not visible in the output.
+== Richtig
+
+Eine Leerzeile führt zu einem neuen Absatz. +
+Wenn Du einen direkten Zeilenumbruch brauchst, für ` +` am Ende der Zeile ein.
