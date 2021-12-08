@@ -95,9 +95,34 @@
             padding: 5px 10px;
             font-family: Arial, sans-serif;
         }
+        #nav {
+            width: 16em;
+            padding-right: 0.5em;
+            position: fixed;
+            height: 100vh;
+            border-right: 2px solid #888888;
+        }
+        #content {
+            padding-left: 17em;
+            position: absolute;
+            top: 0;
+        }
     </style>
 </head>
 <body>
+<div id="nav">
+    <h2>AsciiDoc Koans</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="koans.html">Koans</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a href="exercises.html">Exercises</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+<div id="content">
 <div id="description">
 loading koan...
 </div>
@@ -108,6 +133,7 @@ loading koan...
 </textarea>
 
 <div id="nextDialog"><div id="next"></div><button onclick="next();">Next</button></div>
+</div>
 </body>
 <script>
     var koanNum = 1;
