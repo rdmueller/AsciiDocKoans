@@ -62,36 +62,38 @@
 
             border: 2px solid #888888;
             border-radius: 10px;
-            position: fixed;
-            top: 30%;
-            bottom: 30%;
-            left:20%;
-            right: 20%;
+            xposition: fixed;
+            xtop: 30%;
+            xbottom: 30%;
+            xleft:20%;
+            xright: 20%;
             background-color: rgba(175, 220, 185, 0.9);
-            text-align: center;
+            xtext-align: center;
             display: none;
+            margin-top: 1em;
+            padding: 0 1em 1em 1em;
         }
         #nextDialog.display {
             display: block !important;
         }
         #next {
-            position: absolute;
-            top: 5%;
-            bottom: 30%;
-            left:5%;
-            right: 5%;
-            text-align: center;
+            xposition: absolute;
+            xtop: 5%;
+            xbottom: 30%;
+            xleft:5%;
+            xright: 5%;
+            xtext-align: center;
         }
         #nextDialog button {
             border: 2px solid #888888;
             border-radius: 10px;
-            position: absolute;
-            bottom: 5%;
+            xposition: absolute;
+            xbottom: 5%;
             width: 8em;
             margin-left: auto;
             margin-right: auto;
-            left: 5%;
-            right: 5%;
+            xleft: 5%;
+            xright: 5%;
             padding: 5px 10px;
             font-family: Arial, sans-serif;
         }
@@ -117,13 +119,8 @@
 <div id="nav">
     <h2>AsciiDoc Koans</h2>
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="koans.html">Koans</a></li>
-        <li><a href="tutorials.html">Tutorials</a></li>
-        <li><a href="exercises.html">Exercises</a></li>
-        <li><a href="resources.html">Resources</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="about.html">Über</a></li>
     </ul>
 </div>
 <div id="content">
@@ -186,6 +183,7 @@ loading koan...
             input.style.borderColor = '#88ff88';
             input.classList.add("correct");
             document.getElementById('nextDialog').classList.add("display");
+            window.scroll(0, document.body.scrollHeight);
         } else {
             input.style.borderColor = '#ff8888';
             input.classList.remove("correct");
