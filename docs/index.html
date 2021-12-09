@@ -52,6 +52,7 @@
             position: relative;
             height: 100vh;
             widht: 100vw;
+            scroll-behavior: smooth;
         }
         #plain {
             height: 10em;
@@ -184,7 +185,7 @@ loading koan...
             input.style.borderColor = '#88ff88';
             input.classList.add("correct");
             document.getElementById('nextDialog').classList.add("display");
-            window.scroll({ left:0, top: document.body.scrollHeight,behavior: 'smooth' });
+            window.scroll({ left:0, top: document.body.scrollHeight, behavior: "smooth" });
         } else {
             input.style.borderColor = '#ff8888';
             input.classList.remove("correct");
