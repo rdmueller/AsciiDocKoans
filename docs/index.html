@@ -144,7 +144,7 @@ loading koan...
     function init() {
         console.log("init");
         document.getElementById('plain').focus();
-        window.scroll(0, 0);
+        window.scroll(0, 0, 0);
         targetHtml = document.getElementById('myTarget').innerHTML
     }
     function getKoan() {
@@ -184,7 +184,7 @@ loading koan...
             input.style.borderColor = '#88ff88';
             input.classList.add("correct");
             document.getElementById('nextDialog').classList.add("display");
-            window.scroll(0, document.body.scrollHeight);
+            window.scroll({ left:0, top: document.body.scrollHeight,behavior: 'smooth' });
         } else {
             input.style.borderColor = '#ff8888';
             input.classList.remove("correct");
