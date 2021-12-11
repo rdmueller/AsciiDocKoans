@@ -1,7 +1,8 @@
 ifndef::imagesdir[:imagesdir: ../images]
-== AsciiDoc lernen mit Koans footnote:[https://de.wikipedia.org/wiki/K%C5%8Dan[Wikippedia: Koan]]
+== Richtig
 
-Links bilden den Kern von HTML.
+Eine Leerzeile führt zu einem neuen Absatz. +
+Wenn Du einen direkten Zeilenumbruch brauchst, für ` +` am Ende der Zeile ein.
 
 === Links
 
@@ -16,7 +17,8 @@ Es lässt sich aber auch ein beliebiger Text verlinken: https://google.de[Google
 '''
 //hint
 
-Und jetzt Du!footnote:[https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#links[Dokumentation]]
+Und jetzt Du! +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#links[📖, role=docs, target=docs]
 
 '''
 // Deine Eingabe

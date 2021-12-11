@@ -2,124 +2,7 @@
 <head>
     <script src="asciidoctor/browser/asciidoctor.js"></script>
     <link rel="stylesheet" href="asciidoctor/css/asciidoctor.css"></link>
-    <style>
-        div#myTarget {
-            border: 1px solid #888888;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        div#myTarget:before {
-            content: 'target';
-            font-family: arial, sans-serif;
-            background-color: white;
-            position: relative;
-            top: -18px;
-            padding: 3px 6px;
-            width: 30px;
-        }
-        div#input {
-            border: 2px solid #888888;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        div#input:before {
-            content: 'your result';
-            font-family: arial, sans-serif;
-            background-color: white;
-            position: relative;
-            top: -18px;
-            padding: 3px 6px;
-            width: 30px;
-        }
-        div#input.correct:before {
-            content: 'correct';
-            font-family: arial, sans-serif;
-            font-weight: bold;
-            background-color: white;
-            position: relative;
-            top: -18px;
-            padding: 3px 6px;
-            width: 30px;
-        }
-        body {
-            padding: 0;
-            height: 100vh;
-            widht: 100vw;
-            scroll-behavior: smooth;
-        }
-        html{
-            position: relative;
-            height: 100vh;
-            widht: 100vw;
-            scroll-behavior: smooth;
-        }
-        #content {
-            scroll-behavior: smooth;
-
-        }
-        #plain {
-            height: 10em;
-            font-family: Monospaced, monospace;
-            padding: 2px 4px;
-        }
-        #nextDialog {
-
-            border: 2px solid #888888;
-            border-radius: 10px;
-            xposition: fixed;
-            xtop: 30%;
-            xbottom: 30%;
-            xleft:20%;
-            xright: 20%;
-            background-color: rgba(175, 220, 185, 0.9);
-            xtext-align: center;
-            display: none;
-            margin-top: 1em;
-            padding: 0 1em 1em 1em;
-        }
-        #nextDialog.display {
-            display: block !important;
-        }
-        #next {
-            xposition: absolute;
-            xtop: 5%;
-            xbottom: 30%;
-            xleft:5%;
-            xright: 5%;
-            xtext-align: center;
-        }
-        #nextDialog button {
-            border: 2px solid #888888;
-            border-radius: 10px;
-            xposition: absolute;
-            xbottom: 5%;
-            width: 8em;
-            margin-left: auto;
-            margin-right: auto;
-            xleft: 5%;
-            xright: 5%;
-            padding: 5px 10px;
-            font-family: Arial, sans-serif;
-        }
-        #nav {
-            padding-left: 1.5em;
-            width: 16em;
-            padding-right: 0.5em;
-            position: fixed;
-            height: 100vh;
-            border-right: 2px solid #888888;
-            background-color: rgba(127, 180, 224, 0.1);
-            z-index: 100;
-        }
-        #content {
-            padding-left: 17em;
-            position: absolute;
-            top: 0;
-            padding-bottom: 2em;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"></link>
 </head>
 <body>
 <div id="nav">
@@ -129,80 +12,19 @@
         <li><a href="about.html">Über</a></li>
     </ul>
 </div>
-<div id="content">
-<div id="description">
-loading koan...
-</div>
-<div id="myTarget"></div>
-<div id="hint"></div>
-<div id="input"></div>
-<textarea id="plain" style="width: 100%;" onkeyup="convert();">
-</textarea>
+<div id="template" style="display:none;">
+    <div id="description%%" class="description">
+        loading koan...
+    </div>
+    <div id="target%%" class="target"></div>
+    <div id="hint%%" class="hint"></div>
+    <div id="rendered%%" class="rendered"></div>
+    <textarea id="input%%" class="input" style="width: 100%;" onkeyup="convert();">
+    </textarea>
 
-<div id="nextDialog"><div id="next"></div><button onclick="next();">Next</button></div>
+</div>
+<div id="content">
 </div>
 </body>
-<script>
-    var koanNum = 1;
-    var targetHtml = ""
-    var asciidoctor = Asciidoctor();
-
-    function init() {
-        console.log("init");
-        document.getElementById('plain').focus();
-        window.scroll(0, 0, 0);
-        targetHtml = document.getElementById('myTarget').innerHTML
-    }
-    function getKoan() {
-        fetch("koans/koan_"+koanNum+".adoc")
-            .then(function (response) {
-                if (response.ok) {
-                    return response.text();
-                } else {
-                    alert("HTTP-Error: " + response.status);
-                }
-            })
-            .then(function (koan) {
-                koan = koan.split("'''")
-                var description = document.getElementById('description');
-                description.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + koan[0], {to: 'html5'});
-                var myTarget = document.getElementById('myTarget');
-                console.log(asciidoctor.convert(koan[1], {to: 'html5'}))
-                myTarget.innerHTML = asciidoctor.convert(koan[1], {to: 'html5'});
-                var hint = document.getElementById('hint');
-                hint.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + koan[2], {to: 'html5'});
-                var plain = document.getElementById('plain');
-                plain.value = koan[3];
-                var next = document.getElementById('next');
-                next.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + koan[4], {to: 'html5'});
-                init();
-                convert();
-            });
-    }
-    function convert() {
-        console.log("convert");
-        var content = document.getElementById('plain').value;
-        var inputHtml = asciidoctor.convert(content, {to: 'html5'});
-        document.getElementById('input').innerHTML = inputHtml;
-        var input = document.getElementById('input')
-        if (targetHtml === inputHtml) {
-            //correct
-            input.style.borderColor = '#88ff88';
-            input.classList.add("correct");
-            document.getElementById('nextDialog').classList.add("display");
-            window.scroll({ left:0, top: document.body.scrollHeight, behavior: "smooth" });
-        } else {
-            input.style.borderColor = '#ff8888';
-            input.classList.remove("correct");
-            document.getElementById('nextDialog').classList.remove("display");
-        }
-
-    };
-    function next() {
-        koanNum++;
-        document.getElementById('nextDialog').classList.remove("display");
-        getKoan();
-    }
-    getKoan();
-</script>
+<script src="main.js"></script>
 </html>

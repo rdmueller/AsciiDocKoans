@@ -1,5 +1,5 @@
 ifndef::imagesdir[:imagesdir: ../images]
-== AsciiDoc lernen mit Koans footnote:[https://de.wikipedia.org/wiki/K%C5%8Dan[Wikippedia: Koan]]
+== AsciiDoc lernen mit Koans
 
 Dieses interaktive Tutorial vermittelt die wichtigsten Elemente der AsciiDoc Syntax.
 Jede Seite formuliert eine kleine Aufgabe, indem ein in AsciiDoc formatiertes Ergebnis gezeigt wird.
@@ -21,15 +21,11 @@ Einfache Formatierungen sind *fett* und _kursiv_ oder `monospace`.
 //hint
 
 Hier ist nun der unformatierte Satz und Dein Eingabefeld.
-Ändere den Quelltext so, dass der formatierte Text dem obigen Ergebnis entspricht.footnote:[https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#text-formatting[Dokumentation]]
+Ändere den Quelltext so, dass der formatierte Text dem obigen Ergebnis entspricht. +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#text-formatting[📖, role=docs, target=docs] <= here you can take a peek at the docs if you got stuck
 
 '''
 // Deine Eingabe
 
-Einfache Formatierungen sind fett und kursiv oder monospace.
+Einfache Formatierungen sind fett* und _kursiv_ oder `monospace`.
 
-'''
-// next task
-== Sehr gut!
-
-Dann gehen wir mal zur zweiten Aufgabe

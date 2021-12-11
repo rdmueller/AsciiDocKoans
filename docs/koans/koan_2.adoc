@@ -1,5 +1,4 @@
 ifndef::imagesdir[:imagesdir: ../images]
-== AsciiDoc lernen mit Koans footnote:[https://de.wikipedia.org/wiki/K%C5%8Dan[Wikippedia: Koan]]
 
 Absätze verhalten sich anders, als erwartet.
 
@@ -20,7 +19,8 @@ eine dritte Zeile in einem zweiten Absatz.
 '''
 //hint
 
-Und jetzt Du!footnote:[https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#paragraphs[Dokumentation]]
+Und jetzt Du! +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#paragraphs[📖, role=docs, target=docs]
 
 '''
 // Deine Eingabe
@@ -28,10 +28,3 @@ Und jetzt Du!footnote:[https://docs.asciidoctor.org/asciidoc/latest/syntax-quick
 Eine erste Zeile in einem ersten Absatz.
 Eine zweite Zeile und
 eine dritte Zeile in einem zweiten Absatz.
-
-'''
-// next task
-== Richtig
-
-Eine Leerzeile führt zu einem neuen Absatz. +
-Wenn Du einen direkten Zeilenumbruch brauchst, für ` +` am Ende der Zeile ein.

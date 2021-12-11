@@ -1,0 +1,80 @@
+div.target {
+    border: 1px solid #888888;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+div.target:before {
+    content: 'target';
+    font-family: arial, sans-serif;
+    background-color: white;
+    position: relative;
+    top: -18px;
+    padding: 3px 6px;
+    width: 30px;
+}
+div.rendered {
+    border: 2px solid #888888;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+div.rendered:before {
+    content: 'your result';
+    font-family: arial, sans-serif;
+    background-color: white;
+    position: relative;
+    top: -18px;
+    padding: 3px 6px;
+    width: 30px;
+}
+div.rendered.correct:before {
+    content: 'correct';
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    background-color: white;
+    position: relative;
+    top: -18px;
+    padding: 3px 6px;
+    width: 30px;
+}
+body {
+    padding: 0;
+    height: 100vh;
+    widht: 100vw;
+    scroll-behavior: smooth;
+}
+html{
+    position: relative;
+    height: 100vh;
+    widht: 100vw;
+    scroll-behavior: smooth;
+}
+#content {
+    scroll-behavior: smooth;
+
+}
+.input {
+    height: 10em;
+    font-family: Monospaced, monospace;
+    padding: 2px 4px;
+}
+#nav {
+    padding-left: 1.5em;
+    width: 16em;
+    padding-right: 0.5em;
+    position: fixed;
+    height: 100vh;
+    border-right: 2px solid #888888;
+    background-color: rgba(127, 180, 224, 0.1);
+    z-index: 100;
+}
+#content {
+    padding-left: 17em;
+    position: absolute;
+    top: 0;
+    padding-bottom: 2em;
+}
+.docs {
+    text-decoration: none;
+}
