@@ -1,0 +1,24 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Chapter
+
+//challenge
+
+'''
+//solution
+
+'''
+//hint
+
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#links[📖, role=docs, target=docs]
+
+'''
+// Deine Eingabe
+
+
+'''
+// next task
+== Lob
+

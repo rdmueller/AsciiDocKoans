@@ -1,0 +1,56 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Überschriften
+
+Überschriften werden je nach Tiefe mit einem oder mehreren `=` gefolgt von einem Leerzeichen markiert.
+
+Die Überschrift mit nur _einem_ `=` entspricht dabei dem Titel des Dokuments und darf dementsprechend nur einmal vorkommen.
+
+Teildokumente sollten immer mit der Überschriften-Tiefe `==` beginnen.
+
+'''
+//solution
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+= Level 0 Section Title (Part)
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+===== Level 4 Section Title
+
+====== Level 5 Section Title
+'''
+//hint
+
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#section-titles[📖, role=docs, target=docs]
+
+'''
+// Deine Eingabe
+Document Title (Level 0)
+
+Level 1 Section Title
+
+Level 0 Section Title (Part)
+
+Level 1 Section Title
+
+Level 2 Section Title
+
+Level 3 Section Title
+
+Level 4 Section Title
+
+Level 5 Section Title
+
+'''
+// next task
+== Lob
+
