@@ -1,30 +1,22 @@
-ifndef::imagesdir[:imagesdir: ../images]
+Sehr gut.
+Machen wir weiter mit dem nächsten Abschnitt.
 
-Absätze verhalten sich anders, als erwartet.
+=== Einfache Formatierungen
 
-=== Absätze
-
-Wie auch bei Markdown, sind Absätze anfangs gewöhnungsbedürftig.
-
-Versuche die folgende Formatierung des bekannten Zitats zu erreichen.
-Dabei musst Du den Text in zwei Absätze aufteilen und im zweiten Absatz einen Zeilenumbruch einfügen.
+Ändere den untenstehenden Text so ab, dass die Worte, wie im folgenden Beispiel, fett bzw. kursiv dargestellt werden.
 
 '''
 //solution
-Eine erste Zeile in einem ersten Absatz.
-
-Eine zweite Zeile und +
-eine dritte Zeile in einem zweiten Absatz.
+Einfache Formatierungen sind *fett* und _kursiv_ oder `monospace`.
 
 '''
 //hint
 
 Und jetzt Du! +
-https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#paragraphs[📖, role=docs, target=docs]
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#text-formatting[📖, role=docs, target=docs] <= here you can take a peek at the docs if you got stuck
 
 '''
 // Deine Eingabe
 
-Eine erste Zeile in einem ersten Absatz.
-Eine zweite Zeile und
-eine dritte Zeile in einem zweiten Absatz.
+Einfache Formatierungen sind fett und kursiv oder monospace.
+

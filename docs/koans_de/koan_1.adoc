@@ -1,0 +1,31 @@
+ifndef::imagesdir[:imagesdir: ../images]
+== AsciiDoc lernen mit Koans
+
+Dieses interaktive Tutorial vermittelt die wichtigsten Elemente der AsciiDoc Syntax.
+Jede Seite formuliert eine kleine Aufgabe, indem ein in AsciiDoc formatiertes Ergebnis gezeigt wird.
+
+Deine Aufgabe ist es, eine Ausgangstext mit AsciiDoc so zu formatieren, dass er dem gewünschten Ergebnis entspricht.
+Ist dies geschafft, färbt sich der ursprünglich rote Rahmen grün und es geht weiter zur nächsten Aufgabe.
+
+Wir fangen an mit...
+
+=== Einfache Formatierungen
+
+Ändere den untenstehenden Text so ab, dass die Worte, wie im folgenden Beispiel, fett bzw. kursiv dargestellt werden.
+
+'''
+//solution
+Einfache Formatierungen sind *fett* und _kursiv_ oder `monospace`.
+
+'''
+//hint
+
+Hier ist nun der unformatierte Satz und Dein Eingabefeld.
+Ändere den Quelltext so, dass der formatierte Text dem obigen Ergebnis entspricht. +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#text-formatting[📖, role=docs, target=docs] <= here you can take a peek at the docs if you got stuck
+
+'''
+// Deine Eingabe
+
+Einfache Formatierungen sind fett* und _kursiv_ oder `monospace`.
+

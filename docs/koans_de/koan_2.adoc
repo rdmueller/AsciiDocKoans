@@ -1,0 +1,30 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+Absätze verhalten sich anders, als erwartet.
+
+=== Absätze
+
+Wie auch bei Markdown, sind Absätze anfangs gewöhnungsbedürftig.
+
+Versuche die folgende Formatierung des bekannten Zitats zu erreichen.
+Dabei musst Du den Text in zwei Absätze aufteilen und im zweiten Absatz einen Zeilenumbruch einfügen.
+
+'''
+//solution
+Eine erste Zeile in einem ersten Absatz.
+
+Eine zweite Zeile und +
+eine dritte Zeile in einem zweiten Absatz.
+
+'''
+//hint
+
+Und jetzt Du! +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#paragraphs[📖, role=docs, target=docs]
+
+'''
+// Deine Eingabe
+
+Eine erste Zeile in einem ersten Absatz.
+Eine zweite Zeile und
+eine dritte Zeile in einem zweiten Absatz.

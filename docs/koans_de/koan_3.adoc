@@ -1,7 +1,8 @@
 ifndef::imagesdir[:imagesdir: ../images]
+== Richtig
 
 Eine Leerzeile führt zu einem neuen Absatz. +
-Wenn Du einen direkten Zeilenumbruch brauchst, fügt ` +` am Ende der Zeile ein.
+Wenn Du einen direkten Zeilenumbruch brauchst, für ` +` am Ende der Zeile ein.
 
 === Links
 
@@ -12,8 +13,6 @@ Wenn Du einen direkten Zeilenumbruch brauchst, fügt ` +` am Ende der Zeile ein.
 Ein einfacher Link sieht wie folgt aus: https://google.de
 
 Es lässt sich aber auch ein beliebiger Text verlinken: https://google.de[Google]
-
-Ein relativer Link geht wie folgt: link:about.html[]
 
 '''
 //hint
@@ -28,10 +27,10 @@ Ein einfacher Link sieht wie folgt aus:
 
 Es lässt sich aber auch ein beliebiger Text verlinken:
 
-Ein relativer Link geht wie folgt: about.html
-
 '''
 // next task
 == Super
 
 Das ging schnell
+
+Das war auch schon die letzte Aufgabe.
