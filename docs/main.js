@@ -64,6 +64,8 @@ function convert() {
     var inputHtml = asciidoctor.convert(content, {to: 'html5'});
     document.getElementById('rendered'+koanNum).innerHTML = inputHtml;
     var rendered = document.getElementById('rendered'+koanNum)
+    let output = htmldiff(targetHtml, inputHtml);
+    document.getElementById("diff").innerHTML = output;
     if (targetHtml === inputHtml) {
         //correct
         rendered.style.borderColor = '#88ff88';

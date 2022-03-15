@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "asciidoctor": "^2.2.5"
+    "asciidoctor": "^2.2.5",
+    "htmldiff-js": "^1.0.5"
   }
 }
