@@ -1,4 +1,7 @@
-var koanNum = 1;
+let koanNum = getCookie("koanNum");
+if (koanNum === "") {
+  koanNum = 1;
+}
 var targetHtml = ""
 var asciidoctor = Asciidoctor();
 
@@ -6,6 +9,27 @@ function init() {
     console.log("init");
     //document.getElementById('input'+koanNum).focus();
     targetHtml = document.getElementById('target'+koanNum).innerHTML
+}
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
 function getKoan() {
     fetch("koans/koan_"+koanNum+".adoc")
@@ -45,6 +69,7 @@ function convert() {
         rendered.style.borderColor = '#88ff88';
         rendered.classList.add("correct");
         koanNum++;
+        setCookie("koanNum", koanNum, 365*100);
         getKoan();
         window.setTimeout(function() {
             var descr = document.getElementById ('description'+koanNum)
@@ -60,6 +85,7 @@ function convert() {
 };
 function next() {
     koanNum++;
+    setCookie("koanNum", koanNum, 365*10);
     document.getElementById('nextDialog').classList.remove("display");
     getKoan();
 }
