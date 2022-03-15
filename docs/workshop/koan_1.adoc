@@ -1,0 +1,44 @@
+ifndef::imagesdir[:imagesdir: ../images]
+== AsciiDoc lernen mit Koans
+
+Dieses interaktive Tutorial vermittelt die wichtigsten Elemente der AsciiDoc Syntax.
+Jede Seite formuliert eine kleine Aufgabe, indem ein in AsciiDoc formatiertes Ergebnis gezeigt wird.
+
+Deine Aufgabe ist es, einen Ausgangstext mit AsciiDoc so zu formatieren, dass er dem gewünschten Ergebnis entspricht.
+Ist dies geschafft, färbt sich der ursprünglich rote Rahmen grün und es geht weiter zur nächsten Aufgabe.
+
+Es ist ok, ja sogar gewünscht, wenn Du dabei in der Dokumentation nachschlägst.
+Diese Übungen orientieren sich an der https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference[Syntax Quick Reference]
+
+Wir fangen an mit...
+
+=== Absätze
+
+Absätze verhalten sich anders, als erwartet.
+
+Wie auch bei Markdown, sind Absätze anfangs gewöhnungsbedürftig.
+
+Versuche die folgende Formatierung des Textes zu erreichen.
+Dabei musst Du den Text in zwei Absätze aufteilen und im zweiten Absatz einen Zeilenumbruch einfügen.
+
+'''
+//solution
+Eine erste Zeile in einem ersten Absatz.
+
+Eine zweite Zeile und +
+eine dritte Zeile in einem zweiten Absatz.
+
+'''
+//hint
+
+Hier ist nun der unformatierte Satz und Dein Eingabefeld.
+Ändere den Quelltext so, dass der formatierte Text dem obigen Ergebnis entspricht. +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#paragraphs[📖, role=docs, target=docs]
+
+'''
+// Deine Eingabe
+
+Eine erste Zeile in einem ersten Absatz.
+Eine zweite Zeile und
+eine dritte Zeile in einem zweiten Absatz.
+

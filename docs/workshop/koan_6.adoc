@@ -1,0 +1,43 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Automatisches Inhaltsverzeichnis
+
+//challenge
+
+Asciidoctor kann auf Wunsch ein Inhaltverzeichnis (Table of Contents) erzeugen.
+
+'''
+//solution
+= Titel
+
+== Kapitel 1
+
+== Kapitel 2
+
+=== Unterkapitel 2.1
+
+:toc:
+
+'''
+//hint
+
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#automatic-toc[📖, role=docs, target=docs]
+
+'''
+// Deine Eingabe
+= Titel
+
+== Kapitel 1
+
+== Kapitel 2
+
+=== Unterkapitel 2.1
+
+// rufe hier den toc auf
+
+'''
+// next task
+
+

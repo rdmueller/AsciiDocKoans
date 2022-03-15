@@ -1,0 +1,22 @@
+Sehr gut.
+Machen wir weiter mit dem nächsten Abschnitt.
+
+=== Einfache Formatierungen
+
+Ändere den untenstehenden Text so ab, dass die Worte, wie im folgenden Beispiel, fett bzw. kursiv dargestellt werden.
+
+'''
+//solution
+Einfache Formatierungen sind *fett* und _kursiv_ oder `monospace`.
+
+'''
+//hint
+
+Und jetzt Du! +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#text-formatting[📖, role=docs, target=docs] <= here you can take a peek at the docs if you got stuck
+
+'''
+// Deine Eingabe
+
+Einfache Formatierungen sind fett und kursiv oder monospace.
+
