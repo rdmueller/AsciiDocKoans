@@ -9,22 +9,28 @@
     <h2>AsciiDoc Koans</h2>
     <ul>
         <li><a href="index.html">Start</a></li>
-        <li><a href="about.html">Über</a></li>
+        <li><a href="about.html">&Uuml;ber</a></li>
     </ul>
 </div>
 <div id="template" style="display:none;">
+    <hr />
     <div id="description%%" class="description">
         loading koan...
     </div>
     <div id="target%%" class="target"></div>
     <div id="hint%%" class="hint"></div>
     <div id="rendered%%" class="rendered"></div>
-    <textarea id="input%%" class="input" style="width: 100%;" onkeyup="convert();">
+    <textarea id="input%%" class="input" style="width: 100%;" >
     </textarea>
-
+</div>
+<div id="templateButton" style="display:none;">
+    <div style="text-align: right; margin-top:15px;">
+        <button id="next" onclick="next();">Next</button>
+    </div>
 </div>
 <div id="content">
 </div>
+
 </body>
 <script src="workshop.js"></script>
 </html>

@@ -5,10 +5,10 @@ if (koanNum === "") {
 var targetHtml = ""
 var asciidoctor = Asciidoctor();
 
-function init() {
+function init(partNum) {
     console.log("init");
     //document.getElementById('input'+koanNum).focus();
-    targetHtml = document.getElementById('target'+koanNum).innerHTML
+    targetHtml = document.getElementById('target'+koanNum+'.'+partNum).innerHTML
 }
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
@@ -17,6 +17,7 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 function getCookie(cname) {
+    return ""
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
     let ca = decodedCookie.split(';');
@@ -43,40 +44,59 @@ function getKoan() {
         .then(function (koan) {
             var content = document.getElementById('content');
             //content.innerHTML += document.getElementById('template').innerHTML.replaceAll('%%',koanNum)
-            content.insertAdjacentHTML("beforeend", document.getElementById('template').innerHTML.replaceAll('%%',koanNum));
-            koan = koan.split("'''")
-            var description = document.getElementById('description'+koanNum);
-            description.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + koan[0], {to: 'html5'});
-            var target = document.getElementById('target'+koanNum);
-            console.log(asciidoctor.convert(koan[1], {to: 'html5'}))
-            target.innerHTML = asciidoctor.convert(koan[1], {to: 'html5'});
-            var hint = document.getElementById('hint'+koanNum);
-            hint.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + koan[2], {to: 'html5'});
-            var plain = document.getElementById('input'+koanNum);
-            plain.value = koan[3];
-            init();
-            convert();
+            koanParts = koan.split("''''")
+            let partNum = 0
+            koanParts.forEach(function(part) {
+                    part = part.split("'''");
+                    console.log('partnum: '+partNum);
+                    content.insertAdjacentHTML("beforeend", document.getElementById('template').innerHTML.replaceAll('%%',koanNum+'.'+partNum));
+                    let description = document.getElementById('description'+koanNum+'.'+partNum);
+                    description.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + part[0], {to: 'html5'});
+                    var target = document.getElementById('target'+koanNum+'.'+partNum);
+                    console.log(asciidoctor.convert(part[1], {to: 'html5'}))
+                    target.innerHTML = asciidoctor.convert(part[1], {to: 'html5'});
+                    var hint = document.getElementById('hint'+koanNum+'.'+partNum);
+                    hint.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + part[2], {to: 'html5'});
+                    var plain = document.getElementById('input'+koanNum+'.'+partNum);
+                    plain.addEventListener('keyup', function(e) {
+                        convert(e.target.id.split('.')[1]);
+                    });
+                    plain.addEventListener('input', autoResize, false);
+                    plain.addEventListener('focusin', autoResize, false);
+                    plain.style.height = 'auto';
+                    plain.style.height = plain.scrollHeight + 'px';
+                    console.log("plain: "+plain);
+                    console.log("plain.value: "+plain.value);
+                    plain.value = part[3];
+                    console.log(plain.value);
+                    init(partNum);
+                    convert(partNum);
+                    partNum++;
+            })
+            content.insertAdjacentHTML("beforeend", document.getElementById('templateButton').innerHTML.replaceAll('%%',koanNum+'.'+partNum));
         });
 }
-function convert() {
-    console.log("convert");
-    var content = document.getElementById('input'+koanNum).value;
+function convert(partNum) {
+    console.log("convert:"+koanNum+'.'+partNum);
+    var content = document.getElementById('input'+koanNum+'.'+partNum).value;
     var inputHtml = asciidoctor.convert(content, {to: 'html5'});
-    document.getElementById('rendered'+koanNum).innerHTML = inputHtml;
-    var rendered = document.getElementById('rendered'+koanNum)
+    document.getElementById('rendered'+koanNum+'.'+partNum).innerHTML = inputHtml;
+    var rendered = document.getElementById('rendered'+koanNum+'.'+partNum)
+    var targetHtml = document.getElementById('target'+koanNum+'.'+partNum).innerHTML;
     if (targetHtml === inputHtml) {
         //correct
         rendered.style.borderColor = '#88ff88';
         rendered.classList.add("correct");
-        koanNum++;
-        setCookie("koanNum", koanNum, 365*100);
-        getKoan();
-        window.setTimeout(function() {
-            var descr = document.getElementById ('description'+koanNum)
-            console.log(descr);
-            console.log(koanNum);
-            descr.scrollIntoView ( true );
-        },500);
+
+        //next();
+        //window.setTimeout(function() {
+        //    var descr = document.getElementById ('description'+koanNum+'.'+partNum)
+        //    console.log(descr);
+        //    console.log(koanNum+'.'+partNum);
+        //    descr.scrollIntoView ( true );
+        //},500);
+
+
     } else {
         rendered.style.borderColor = '#ff8888';
         rendered.classList.remove("correct");
@@ -86,7 +106,11 @@ function convert() {
 function next() {
     koanNum++;
     setCookie("koanNum", koanNum, 365*10);
-    document.getElementById('nextDialog').classList.remove("display");
     getKoan();
+}
+
+function autoResize() {
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
 }
 getKoan();

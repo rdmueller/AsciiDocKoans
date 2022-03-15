@@ -1,3 +1,4 @@
+import HtmlDiff from 'htmldiff-js';
 let koanNum = getCookie("koanNum");
 if (koanNum === "") {
   koanNum = 1;
@@ -64,7 +65,7 @@ function convert() {
     var inputHtml = asciidoctor.convert(content, {to: 'html5'});
     document.getElementById('rendered'+koanNum).innerHTML = inputHtml;
     var rendered = document.getElementById('rendered'+koanNum)
-    let output = htmldiff(targetHtml, inputHtml);
+    let output = HtmlDiff.execute(targetHtml, inputHtml);
     document.getElementById("diff").innerHTML = output;
     if (targetHtml === inputHtml) {
         //correct

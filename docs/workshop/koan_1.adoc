@@ -16,8 +16,6 @@ Wir fangen an mit...
 
 Absätze verhalten sich anders, als erwartet.
 
-Wie auch bei Markdown, sind Absätze anfangs gewöhnungsbedürftig.
-
 Versuche die folgende Formatierung des Textes zu erreichen.
 Dabei musst Du den Text in zwei Absätze aufteilen und im zweiten Absatz einen Zeilenumbruch einfügen.
 

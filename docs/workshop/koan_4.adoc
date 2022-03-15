@@ -2,39 +2,29 @@ ifndef::imagesdir[:imagesdir: ../images]
 
 //Recap
 
-=== Meta-Daten des Dokuments
+=== Listen
 
 //challenge
-AsciiDoc ist eine Auszeichnungssprache zum Generieren von Dokumenten.
-Dementsprechend können gewisse Meta-Daten wie Autor, Datum, Titel, etc. definiert werden, die zum Generieren eines Titelblatts benötigt werden.
-
-Diese Meta-Daten werden direkt unter dem Dokumententitel, welcher als `=`-Überschrift definiert wird, angegeben.
+Listen gehören auch noch zu den einfachen Formatierungen.
 
 '''
 //solution
-= Document Title
-Author Name <author@email.org>
-v2.0, 2019-03-22
-
-This document provides...
+* Milch
+* Käse
+* Eier
 
 '''
 //hint
 
-https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#document-header[📖, role=docs, target=docs]
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#lists[📖, role=docs, target=docs]
 
 '''
 // Deine Eingabe
-Document Title
-Author Name <author@email.org>
-v2.0, 2019-03-22
-
-This document provides...
+Milch
+Käse
+Eier
 
 '''
 // next task
-
-Richtig.
-Die Meta-Daten werden jedoch eher selten genutzt.
 
 

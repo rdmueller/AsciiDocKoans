@@ -58,6 +58,9 @@ html{
     height: 10em;
     font-family: Monospaced, monospace;
     padding: 2px 4px;
+    display: block;
+    overflow: hidden;
+    resize: none;
 }
 #nav {
     padding-left: 1.5em;
@@ -88,4 +91,7 @@ del {
     text-decoration: line-through;
     background-color: #fbb6c2;
     color: #555;
+}
+ins.mod {
+    background-color: #fafaa9;
 }
