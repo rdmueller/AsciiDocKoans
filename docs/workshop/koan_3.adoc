@@ -1,37 +1,46 @@
 ifndef::imagesdir[:imagesdir: ../images]
 
-Eine Leerzeile führt zu einem neuen Absatz. +
-Wenn Du einen direkten Zeilenumbruch brauchst, fügt ` +` am Ende der Zeile ein.
-
 === Links
 
 Ändere den untenstehenden Text so ab, der Text wie gezeigt auf https://google.de verlinkt.
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#links[📖, role=docs, target=docs]
 
 '''
 //solution
 Ein einfacher Link sieht wie folgt aus: https://google.de
 
-Es lässt sich aber auch ein beliebiger Text verlinken: https://google.de[Google]
-
-Ein relativer Link geht wie folgt: link:about.html[]
-
 '''
 //hint
 
-Und jetzt Du! +
-https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#links[📖, role=docs, target=docs]
 
 '''
 // Deine Eingabe
 
 Ein einfacher Link sieht wie folgt aus:
 
-Es lässt sich aber auch ein beliebiger Text verlinken:
 
-Ein relativer Link geht wie folgt: about.html
+''''
+
+//target
+'''
+
+Es lässt sich aber auch ein beliebiger Text verlinken: https://google.de[Google]
 
 '''
-// next task
-== Super
 
-Das ging schnell
+'''
+Es lässt sich aber auch ein beliebiger Text verlinken: https://google.de
+
+''''
+
+//target
+'''
+Ein relativer Link geht wie folgt: link:about.html[]
+
+//hint
+'''
+
+// Deine Eingabe
+'''
+Ein relativer Link geht wie folgt: about.html
+

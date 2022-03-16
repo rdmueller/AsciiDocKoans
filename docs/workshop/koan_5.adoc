@@ -10,13 +10,13 @@ Die Überschrift mit nur _einem_ `=` entspricht dabei dem Titel des Dokuments un
 
 Teildokumente sollten immer mit der Überschriften-Tiefe `==` beginnen.
 
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#section-titles[📖, role=docs, target=docs]
+
 '''
 //solution
 = Document Title (Level 0)
 
 == Level 1 Section Title
-
-= Level 0 Section Title (Part)
 
 == Level 1 Section Title
 
@@ -24,13 +24,9 @@ Teildokumente sollten immer mit der Überschriften-Tiefe `==` beginnen.
 
 ==== Level 3 Section Title
 
-===== Level 4 Section Title
-
-====== Level 5 Section Title
 '''
 //hint
 
-https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#section-titles[📖, role=docs, target=docs]
 
 '''
 // Deine Eingabe
@@ -38,19 +34,80 @@ Document Title (Level 0)
 
 Level 1 Section Title
 
-Level 0 Section Title (Part)
-
 Level 1 Section Title
 
 Level 2 Section Title
 
 Level 3 Section Title
 
-Level 4 Section Title
 
-Level 5 Section Title
+// next task
+
+''''
+
+AsciiDoc beherrscht natürlich automatische Nummerierung.
 
 '''
-// next task
-== Lob
+//solution
+:numbered:
+
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+'''
+//hint
+
+
+'''
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+''''
+
+Jede Überschrift kann automatisch verlinkt werden.
+
+'''
+//solution
+:sectanchors:
+
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+'''
+//hint
+
+
+'''
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+
 

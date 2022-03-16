@@ -95,3 +95,10 @@ del {
 ins.mod {
     background-color: #fafaa9;
 }
+
+table#score tr td {
+    padding: 3px 6px;
+}
+table#score {
+    margin-left: 15px;
+}

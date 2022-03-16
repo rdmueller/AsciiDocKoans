@@ -48,36 +48,36 @@ function getKoan() {
             let partNum = 0
             koanParts.forEach(function(part) {
                     part = part.split("'''");
-                    console.log('partnum: '+partNum);
                     content.insertAdjacentHTML("beforeend", document.getElementById('template').innerHTML.replaceAll('%%',koanNum+'.'+partNum));
                     let description = document.getElementById('description'+koanNum+'.'+partNum);
                     description.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + part[0], {to: 'html5'});
                     var target = document.getElementById('target'+koanNum+'.'+partNum);
-                    console.log(asciidoctor.convert(part[1], {to: 'html5'}))
                     target.innerHTML = asciidoctor.convert(part[1], {to: 'html5'});
                     var hint = document.getElementById('hint'+koanNum+'.'+partNum);
                     hint.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + part[2], {to: 'html5'});
                     var plain = document.getElementById('input'+koanNum+'.'+partNum);
                     plain.addEventListener('keyup', function(e) {
-                        convert(e.target.id.split('.')[1]);
+                        let regexp = new RegExp('^[a-z]+([0-9]+)[.]([0-9]+)$');
+                        let match = regexp.exec(e.target.id);
+                        console.log(e.target.id);
+                        console.log(match);
+                        convert(match[1], match[2]);
                     });
                     plain.addEventListener('input', autoResize, false);
                     plain.addEventListener('focusin', autoResize, false);
                     plain.style.height = 'auto';
                     plain.style.height = plain.scrollHeight + 'px';
-                    console.log("plain: "+plain);
-                    console.log("plain.value: "+plain.value);
                     plain.value = part[3];
-                    console.log(plain.value);
                     init(partNum);
-                    convert(partNum);
+                    convert(koanNum, partNum);
                     partNum++;
             })
             content.insertAdjacentHTML("beforeend", document.getElementById('templateButton').innerHTML.replaceAll('%%',koanNum+'.'+partNum));
+            countScore();
         });
 }
-function convert(partNum) {
-    console.log("convert:"+koanNum+'.'+partNum);
+function convert(koanNum, partNum) {
+    console.log(koanNum+" - "+partNum);
     var content = document.getElementById('input'+koanNum+'.'+partNum).value;
     var inputHtml = asciidoctor.convert(content, {to: 'html5'});
     document.getElementById('rendered'+koanNum+'.'+partNum).innerHTML = inputHtml;
@@ -87,15 +87,7 @@ function convert(partNum) {
         //correct
         rendered.style.borderColor = '#88ff88';
         rendered.classList.add("correct");
-
-        //next();
-        //window.setTimeout(function() {
-        //    var descr = document.getElementById ('description'+koanNum+'.'+partNum)
-        //    console.log(descr);
-        //    console.log(koanNum+'.'+partNum);
-        //    descr.scrollIntoView ( true );
-        //},500);
-
+        countScore();
 
     } else {
         rendered.style.borderColor = '#ff8888';
@@ -108,9 +100,29 @@ function next() {
     setCookie("koanNum", koanNum, 365*10);
     getKoan();
 }
-
+function countScore() {
+    var score = 0;
+    var scores = "<table id='score'>";
+    var results = document.getElementsByClassName('rendered');
+    for (var i = 0; i < results.length; i++) {
+        var result = results[i];
+        let regexp = new RegExp('^[a-z]+([0-9]+)[.]([0-9]+)$');
+        let match = regexp.exec(result.id);
+        if (match) {
+            if (result.classList.contains('correct')) {
+                score++;
+                scores += "<tr><td>"+match[1]+"."+match[2]+"</td><td>OK</td></tr>";
+            } else {
+                scores += "<tr><td>"+match[1]+"."+match[2]+"</td><td>-</td></tr>";
+            }
+        }
+    }
+    document.getElementById('score').innerHTML = scores+"</table>";
+    return score;
+}
 function autoResize() {
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
 }
 getKoan();
+

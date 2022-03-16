@@ -6,6 +6,7 @@ ifndef::imagesdir[:imagesdir: ../images]
 
 //challenge
 Listen gehören auch noch zu den einfachen Formatierungen.
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#lists[📖, role=docs, target=docs]
 
 '''
 //solution
@@ -16,7 +17,6 @@ Listen gehören auch noch zu den einfachen Formatierungen.
 '''
 //hint
 
-https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#lists[📖, role=docs, target=docs]
 
 '''
 // Deine Eingabe
@@ -24,7 +24,63 @@ Milch
 Käse
 Eier
 
-'''
+''''
 // next task
+verschachtelte Listen
+
+'''
+//solution
+* Einkaufen:
+** Milch
+** Käse
+** Eier
+
+'''
+//hint
+
+
+'''
+Einkaufen:
+Milch
+Käse
+Eier
+
+''''
+// next task
+nummerierte Listen
+
+'''
+//solution
+. Milch
+. Käse
+. Eier
+
+'''
+//hint
+
+
+'''
+Milch
+Käse
+Eier
+
+''''
+// next task
+Checkliste
+
+'''
+//solution
+* [ ] Milch
+* [ ] Käse
+* [ ] Eier
+
+'''
+//hint
+
+
+'''
+Milch
+Käse
+Eier
 
 

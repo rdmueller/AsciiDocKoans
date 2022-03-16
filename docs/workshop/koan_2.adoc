@@ -1,9 +1,9 @@
-Sehr gut.
+Sehr gut. +
 Machen wir weiter mit dem nächsten Abschnitt.
 
 === Einfache Formatierungen
 
-Ändere den untenstehenden Text so ab, dass die Worte, wie im folgenden Beispiel, fett, kursiv bzw. Monotype dargestellt werden.
+Ändere den untenstehenden Text so ab, dass die Worte, wie im folgenden Beispielen, fett, kursiv bzw. Monotype dargestellt werden.
 
 https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#text-formatting[📖, role=docs, target=docs] <= hier gibt es Hilfe zu den Formatierungen in der AsciiDoc-Dokumentation.
 
