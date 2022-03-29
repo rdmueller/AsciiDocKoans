@@ -1,3 +1,4 @@
+
 let koanNum = getCookie("koanNum");
 if (koanNum === "") {
   koanNum = 1;
@@ -74,16 +75,25 @@ function getKoan() {
             })
             content.insertAdjacentHTML("beforeend", document.getElementById('templateButton').innerHTML.replaceAll('%%',koanNum+'.'+partNum));
             countScore();
+            window.setTimeout(function() {
+                var descr = document.getElementById ('description'+koanNum+".0");
+                console.log(descr);
+                console.log(koanNum);
+                descr.scrollIntoView ( true );
+            },500);
         });
 }
 function convert(koanNum, partNum) {
     console.log(koanNum+" - "+partNum);
     var content = document.getElementById('input'+koanNum+'.'+partNum).value;
-    var inputHtml = asciidoctor.convert(content, {to: 'html5'});
+    var inputHtml = asciidoctor.convert(content, {to: 'html5'})
+    //inputHtml = inputHtml.replaceAll('&#10063;','❏');
     document.getElementById('rendered'+koanNum+'.'+partNum).innerHTML = inputHtml;
     var rendered = document.getElementById('rendered'+koanNum+'.'+partNum)
     var targetHtml = document.getElementById('target'+koanNum+'.'+partNum).innerHTML;
-    if (targetHtml === inputHtml) {
+//    let output = htmlDiff.execute(targetHtml, inputHtml);
+//    rendered.innerHTML = output;
+    if (targetHtml.trim() == inputHtml.trim()) {
         //correct
         rendered.style.borderColor = '#88ff88';
         rendered.classList.add("correct");
@@ -102,18 +112,26 @@ function next() {
 }
 function countScore() {
     var score = 0;
-    var scores = "<table id='score'>";
+    var scores = "<table id='score' style='position: absolute; bottom: 2em;'>";
     var results = document.getElementsByClassName('rendered');
+    let lastKoan = 0;
     for (var i = 0; i < results.length; i++) {
         var result = results[i];
         let regexp = new RegExp('^[a-z]+([0-9]+)[.]([0-9]+)$');
         let match = regexp.exec(result.id);
         if (match) {
+            if (match[1] != lastKoan) {
+                if (lastKoan != 0) {
+                    scores += "</tr>"
+                }
+                scores += "<tr><td>"+match[1]+"</td>";
+                lastKoan = match[1];
+            }
             if (result.classList.contains('correct')) {
                 score++;
-                scores += "<tr><td>"+match[1]+"."+match[2]+"</td><td>OK</td></tr>";
+                scores += "<td>OK</td>";
             } else {
-                scores += "<tr><td>"+match[1]+"."+match[2]+"</td><td>-</td></tr>";
+                scores += "<td>-</td>";
             }
         }
     }

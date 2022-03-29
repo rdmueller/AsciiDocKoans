@@ -1,0 +1,16 @@
+= AsciiDocKoans
+
+== ADRs
+
+=== HTML Diff
+
+==== Decision
+
+For the time being, we will not use a diff library.
+
+There are several javascript based diff libraries available.
+However, most of them only diff the text, not the styles.
+https://github.com/dfoverdx/htmldiff-js[htmldiff-js] is capable of diffing also the styles.
+We gave it a try but the diff is not good enough.
+
+Hint: we used browserify to use the node module.

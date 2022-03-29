@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "asciidoctor": "^2.2.5",
+    "browserify": "^17.0.0",
     "htmldiff-js": "^1.0.5"
   }
 }

@@ -85,15 +85,24 @@ html{
 ins {
     text-decoration: none;
     background-color: #d4fcbc;
+    display: inline-block;
+    min-width: 1em;
+    min-height: 1em;
 }
 
 del {
     text-decoration: line-through;
     background-color: #fbb6c2;
     color: #555;
+    display: inline-block;
+    min-width: 1em;
+    min-height: 1em;
 }
 ins.mod {
     background-color: #fafaa9;
+    display: inline-block;
+    min-width: 1em;
+    min-height: 1em;
 }
 
 table#score tr td {
