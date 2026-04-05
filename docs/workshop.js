@@ -156,6 +156,17 @@ function countScore() {
     if (label) label.textContent = score + ' / ' + total;
     return score;
 }
+function toggleHint(id) {
+    var hint = document.getElementById('hint' + id);
+    var btn = document.getElementById('hintbtn' + id);
+    if (hint.classList.contains('visible')) {
+        hint.classList.remove('visible');
+        btn.textContent = 'Show hint';
+    } else {
+        hint.classList.add('visible');
+        btn.textContent = 'Hide hint';
+    }
+}
 function autoResize() {
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';

@@ -105,6 +105,32 @@ ins.mod {
     min-height: 1em;
 }
 
+.hint {
+    display: none;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background: #fffbe6;
+    border: 1px solid #e6d990;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.hint.visible {
+    display: block;
+}
+.hint-btn {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 12px;
+    cursor: pointer;
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 8px;
+}
+.hint-btn:hover {
+    border-color: #999;
+    color: #333;
+}
 table#score tr td {
     padding: 3px 6px;
 }
