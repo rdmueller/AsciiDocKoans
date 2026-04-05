@@ -135,7 +135,13 @@ function countScore() {
             }
         }
     }
-    document.getElementById('score').innerHTML = scores+"</table>";
+    document.getElementById('score').innerHTML = scores+"</table>"; // trusted static content only
+    var total = results.length;
+    var pct = total > 0 ? Math.round(score / total * 100) : 0;
+    var fill = document.getElementById('progress-fill');
+    var label = document.getElementById('progress-label');
+    if (fill) fill.style.width = pct + '%';
+    if (label) label.textContent = score + ' / ' + total;
     return score;
 }
 function autoResize() {
