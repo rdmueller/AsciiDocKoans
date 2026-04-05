@@ -1,0 +1,76 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Bilder
+
+Block-Bilder werden mit `image::` eingebunden. Der Dateiname steht zwischen den Doppelpunkten und den eckigen Klammern.
+
+https://docs.asciidoctor.org/asciidoc/latest/macros/images/[📖, role=docs, target=docs]
+
+'''
+//solution
+image::file.png[]
+
+'''
+//hint
+`image::dateiname.png[]` — zwei Doppelpunkte für Block-Bilder.
+
+'''
+file.png
+
+''''
+
+Bilder können einen Titel, Alt-Text und eine Breite bekommen.
+
+'''
+//solution
+.Ein Screenshot der Datei-Auswahl
+image::file.png[Datei-Auswahl, width=200]
+
+'''
+//hint
+Titel mit `.` vor dem image-Macro. Alt-Text und width in die eckigen Klammern.
+
+'''
+image::file.png[]
+
+''''
+
+Inline-Bilder verwenden nur einen Doppelpunkt und erscheinen im Textfluss.
+
+'''
+//solution
+Klicke auf das Icon image:file.png[Icon, width=20] um die Datei zu öffnen.
+
+'''
+//hint
+`image:dateiname.png[]` — nur ein Doppelpunkt für Inline-Bilder.
+
+'''
+Klicke auf das Icon um die Datei zu öffnen.
+
+''''
+
+Diagramme lassen sich als PlantUML direkt im Dokument schreiben. Mit Kroki werden sie automatisch gerendert.
+
+'''
+//solution
+[plantuml]
+----
+@startuml
+Alice -> Bob: Hello
+Bob -> Alice: Hi!
+@enduml
+----
+
+'''
+//hint
+`[plantuml]` als Attribut vor dem Code-Block.
+
+'''
+@startuml
+Alice -> Bob: Hello
+Bob -> Alice: Hi!
+@enduml
+

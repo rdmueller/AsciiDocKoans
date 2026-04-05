@@ -1,4 +1,84 @@
-= AsciiDocKoans
+= AsciiDoc Koans
+
+Learn AsciiDoc by doing. Each koan shows you a rendered target. Your job: figure out the AsciiDoc markup that produces it.
+
+== What are Koans?
+
+Koans are small exercises where you see the desired result and have to discover the solution yourself. Unlike tutorials that tell you what to type, koans make you think. When your markup matches the target, the border turns green.
+
+== Topics
+
+[cols="1,3"]
+|===
+| Koan | Topics
+
+| 01 Formatting
+| Bold, italic, monospace, strikethrough, highlight
+
+| 02 Paragraphs
+| Sentences, paragraphs, line breaks
+
+| 03 Code
+| Code blocks, syntax highlighting, line numbers, callouts
+
+| 04 Lists
+| Unordered, ordered, nested, description lists
+
+| 05 Tables
+| Simple tables, headers, column widths
+
+| 06 Admonitions
+| NOTE, TIP, WARNING, IMPORTANT, CAUTION
+
+| 07 Images
+| Block images, inline images, titles
+
+| 08 Structure
+| Headings, attributes, includes
+|===
+
+== Getting Started
+
+=== Option 1: In the Browser (Workshop Mode)
+
+Open https://rdmueller.github.io/AsciiDocKoans/workshop.html[Workshop Mode] in your browser. No installation needed.
+
+=== Option 2: GitHub Codespaces
+
+Click the button to open a full development environment in your browser:
+
+https://codespaces.new/rdmueller/AsciiDocKoans[image:https://img.shields.io/badge/Open%20in-Codespaces-blue?logo=github[Open in GitHub Codespaces]]
+
+=== Option 3: IntelliJ IDEA
+
+. Clone this repository
+. Open the `koans/` folder in IntelliJ IDEA
+. Install the https://plugins.jetbrains.com/plugin/7391-asciidoc[AsciiDoc Plugin]
+. Open any koan file (e.g. `01_formatting.adoc`)
+. Edit on the left, see the preview on the right
+. When your solution matches the target, the border turns green
+
+== How It Works
+
+Each koan file contains:
+
+* A *target* block (grey border) showing the desired output
+* An *input* block (red border) where you write your AsciiDoc
+
+The included JavaScript compares the rendered HTML of both blocks. When they match, the input border turns green and the score counter updates.
+
+== Workshop Mode vs IntelliJ Mode
+
+* *Workshop Mode* (`docs/workshop.html`): Browser-based, uses Asciidoctor.js to render in real-time. Best for workshops and quick learning.
+* *IntelliJ Mode* (`koans/*.adoc`): Uses IntelliJ's AsciiDoc preview. Best for developers who want to learn in their IDE.
+
+Both modes cover the same topics with the same koan concept.
+
+== Credits
+
+* Inspired by http://rubykoans.com/[Ruby Koans]
+* Uses https://asciidoctor.org/[Asciidoctor] for rendering
+* See also: https://github.com/ahus1/asciidoc-kata[AsciiDoc Kata] by Alexander Schwartz
 
 == ADRs
 
@@ -12,5 +92,3 @@ There are several javascript based diff libraries available.
 However, most of them only diff the text, not the styles.
 https://github.com/dfoverdx/htmldiff-js[htmldiff-js] is capable of diffing also the styles.
 We gave it a try but the diff is not good enough.
-
-Hint: we used browserify to use the node module.

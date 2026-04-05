@@ -1,0 +1,39 @@
+== Formatting
+
+Welcome to the AsciiDoc-Koans.
+For each task, a target paragraph is given which you should meditate on and try to rebuild with your AsciiDoc knowledge.
+
+If you are stuck and want to reveal the solution, kbd:[ctrl]-click the include file to see it.
+
+=== Basic Formattings
+
+include::solutions/01_formatting.adoc[tag=01]
+
+Apply bold and italics formatting (hint: look at the menu above the source code window image:images/file.png[width=60]):
+
+[.input]
+Some basic formattings are bold and italics.
+
+=== Inline Code
+
+include::solutions/01_formatting.adoc[tag=02]
+
+[.input]
+As a developer, chance are that you want to format some words with a mono-spaced font to show that this is code.
+
+=== Strike Through
+
+include::solutions/01_formatting.adoc[tag=03]
+
+[.input]
+Some advanced formatting is strike through.
+
+The `line-through` in `[.line-through]\#strike through#` is just the name of a CSS class.
+This allows you to create your own styles.
+
+=== Highlight
+
+include::solutions/01_formatting.adoc[tag=04]
+
+[.input]
+And you can even highlight some text.

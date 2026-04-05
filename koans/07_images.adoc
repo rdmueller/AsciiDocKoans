@@ -1,0 +1,28 @@
+== Images
+
+=== Block Image
+
+include::solutions/07_images.adoc[tag=01]
+
+TIP: Block images use `image::` with two colons.
+
+[.input]
+file.png
+
+=== Image with Title and Width
+
+include::solutions/07_images.adoc[tag=02]
+
+TIP: Title with `.` before the macro. Alt-text and width inside `[]`.
+
+[.input]
+image::file.png[]
+
+=== Inline Image
+
+include::solutions/07_images.adoc[tag=03]
+
+TIP: Inline images use `image:` with one colon.
+
+[.input]
+Click the icon to open the file.

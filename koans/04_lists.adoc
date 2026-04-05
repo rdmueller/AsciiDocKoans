@@ -1,0 +1,42 @@
+== Lists
+
+=== Unordered List
+
+include::solutions/04_lists.adoc[tag=01]
+
+[.input]
+Apples
+Bananas
+Cherries
+
+=== Ordered List
+
+include::solutions/04_lists.adoc[tag=02]
+
+[.input]
+First step
+Second step
+Third step
+
+=== Nested Lists
+
+include::solutions/04_lists.adoc[tag=03]
+
+TIP: Nested items use more markers: `**` for second level, `***` for third.
+
+[.input]
+Fruits
+Apples
+Bananas
+Vegetables
+Carrots
+
+=== Description List
+
+include::solutions/04_lists.adoc[tag=04]
+
+TIP: Term followed by `::` and the description.
+
+[.input]
+AsciiDoc: A text document format for writing documentation.
+Markdown: A lightweight markup language.

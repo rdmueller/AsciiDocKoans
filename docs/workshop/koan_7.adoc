@@ -1,0 +1,130 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Tabellen
+
+Tabellen beginnen und enden mit `|===`. Jede Zelle startet mit `|`.
+
+https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-table/[📖, role=docs, target=docs]
+
+'''
+//solution
+|===
+| Spalte 1 | Spalte 2
+
+| Zelle A
+| Zelle B
+
+| Zelle C
+| Zelle D
+|===
+
+'''
+//hint
+`|===` als Anfang und Ende. Jede Zelle mit `|`.
+
+'''
+Spalte 1, Spalte 2, Zelle A, Zelle B, Zelle C, Zelle D
+
+''''
+
+Die erste Zeile wird automatisch zum Header, wenn danach eine Leerzeile folgt.
+
+'''
+//solution
+|===
+| Name | Sprache
+
+| docToolchain
+| Groovy
+
+| dacli
+| Go
+|===
+
+'''
+//hint
+Leerzeile nach der ersten Zeile macht sie zum Header.
+
+'''
+|===
+| Name | Sprache
+| docToolchain
+| Groovy
+| dacli
+| Go
+|===
+
+''''
+
+Spaltenbreiten lassen sich über das `cols`-Attribut steuern.
+
+'''
+//solution
+[cols="1,3"]
+|===
+| Kürzel | Beschreibung
+
+| SA
+| Semantic Anchors
+
+| DaC
+| Docs-as-Code
+|===
+
+'''
+//hint
+`[cols="1,3"]` vor `|===` — Verhältnis 1:3.
+
+'''
+|===
+| Kürzel | Beschreibung
+
+| SA
+| Semantic Anchors
+
+| DaC
+| Docs-as-Code
+|===
+
+''''
+
+Mit `a` als Spaltentyp kann AsciiDoc direkt in Zellen geschrieben werden.
+
+'''
+//solution
+[cols="1,2a"]
+|===
+| Feature | Details
+
+| Listen
+|
+* Eins
+* Zwei
+* Drei
+
+| Code
+|
+[source]
+----
+println "hi"
+----
+|===
+
+'''
+//hint
+`[cols="1,2a"]` — das `a` steht für AsciiDoc-Content in der Spalte.
+
+'''
+[cols="1,2"]
+|===
+| Feature | Details
+
+| Listen
+| Eins, Zwei, Drei
+
+| Code
+| println "hi"
+|===
+

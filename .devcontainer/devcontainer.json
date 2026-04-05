@@ -1,0 +1,12 @@
+{
+  "name": "AsciiDocKoans",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "postCreateCommand": "npm install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "asciidoctor.asciidoctor-vscode"
+      ]
+    }
+  }
+}

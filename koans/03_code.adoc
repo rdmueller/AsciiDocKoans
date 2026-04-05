@@ -1,0 +1,42 @@
+== Code
+
+=== Code Blocks
+
+include::solutions/03_code.adoc[tag=01]
+
+[.input]
+10 print "Hello World"
+20 goto 10
+
+There are two ways to get the same result. Can you figure out both?
+
+=== Syntax Highlighting
+
+include::solutions/03_code.adoc[tag=02]
+
+TIP: this example is written in Groovy
+
+[.input]
+10.times {
+    println "Hello World"
+}
+
+=== Line Numbers
+
+include::solutions/03_code.adoc[tag=03]
+
+[.input]
+10.times {
+println "Hello World"
+}
+
+=== Callouts
+
+include::solutions/03_code.adoc[tag=04]
+
+TIP: Callouts are numbered references in code, explained below the block.
+
+[.input]
+10.times {
+    println "Hello World"
+}

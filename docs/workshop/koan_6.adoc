@@ -1,0 +1,107 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Sourcecode
+
+Code-Blöcke werden mit vier Bindestrichen `----` eingegrenzt.
+
+https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/[📖, role=docs, target=docs]
+
+'''
+//solution
+----
+10 print "Hello World"
+20 goto 10
+----
+
+'''
+//hint
+Vier Bindestriche vor und nach dem Code.
+
+'''
+10 print "Hello World"
+20 goto 10
+
+''''
+
+Syntax-Highlighting wird über ein `[source]`-Attribut mit Sprachname aktiviert.
+
+'''
+//solution
+[source, groovy]
+----
+println "Hello World"
+if (true) {
+    println "AsciiDoc is great"
+}
+----
+
+'''
+//hint
+`[source, groovy]` vor den Bindestrichen.
+
+'''
+println "Hello World"
+if (true) {
+    println "AsciiDoc is great"
+}
+
+''''
+
+Zeilennummern machen langen Code lesbarer.
+
+'''
+//solution
+[source, groovy, linenums]
+----
+println "Hello World"
+if (true) {
+    println "AsciiDoc is great"
+}
+----
+
+'''
+//hint
+Das Attribut `linenums` hinzufügen.
+
+'''
+[source, groovy]
+----
+println "Hello World"
+if (true) {
+    println "AsciiDoc is great"
+}
+----
+
+''''
+
+Callouts markieren wichtige Stellen im Code mit nummerierten Referenzen.
+
+'''
+//solution
+[source, groovy]
+----
+println "Hello World" // <1>
+if (true) {
+    println "AsciiDoc is great" // <2>
+}
+----
+<1> Ausgabe auf der Konsole
+<2> Bedingte Ausgabe
+
+'''
+//hint
+`// <1>` im Code, `<1> Erklärung` darunter.
+
+'''
+[source, groovy]
+----
+println "Hello World"
+if (true) {
+    println "AsciiDoc is great"
+}
+----
+Ausgabe auf der Konsole
+Bedingte Ausgabe
+

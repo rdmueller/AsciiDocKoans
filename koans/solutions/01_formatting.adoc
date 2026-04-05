@@ -1,0 +1,21 @@
+== Formatting
+
+//tag::01[]
+[.target]
+Some basic formattings are *bold* and _italics_.
+//end::01[]
+
+//tag::02[]
+[.target]
+As a developer, chance are that you want to format some words with a `mono-spaced` font to show that this is code.
+//end::02[]
+
+//tag::03[]
+[.target]
+Some advanced formatting is [.line-through]#strike through#.
+//end::03[]
+
+//tag::04[]
+[.target]
+And you can even #highlight# some text.
+//end::04[]

@@ -1,0 +1,83 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Includes und Attribute
+
+Attribute sind Variablen, die mit `:name: wert` definiert werden.
+
+https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes/[📖, role=docs, target=docs]
+
+'''
+//solution
+:projekt: AsciiDocKoans
+:version: 2.0
+
+Willkommen bei {projekt} Version {version}.
+
+'''
+//hint
+`:name: wert` zum Definieren, `{name}` zum Verwenden.
+
+'''
+Willkommen bei AsciiDocKoans Version 2.0.
+
+''''
+
+Mit `include::` lassen sich externe Dateien einbinden. Das ist die Basis von Docs-as-Code: Dokumente modular aufbauen.
+
+'''
+//solution
+\include::koan_6.adoc[]
+
+'''
+//hint
+`include::dateiname.adoc[]` bindet eine andere Datei ein.
+
+'''
+(Inhalt von koan_6.adoc hier einfügen)
+
+''''
+
+Includes können auf bestimmte Tags eingeschränkt werden. So lässt sich Sourcecode direkt aus dem Quellcode einbinden.
+
+'''
+//solution
+[source, groovy]
+----
+\include::koan_6.adoc[tag=example]
+----
+
+'''
+//hint
+`include::datei[tag=name]` bindet nur den markierten Bereich ein.
+
+'''
+[source, groovy]
+----
+(Code aus koan_6.adoc, Tag "example")
+----
+
+''''
+
+Bedingte Includes ermöglichen verschiedene Ausgaben je nach Zielformat.
+
+'''
+//solution
+\ifdef::backend-html5[]
+Dieser Text erscheint nur in der HTML-Ausgabe.
+\endif::[]
+
+\ifdef::backend-pdf[]
+Dieser Text erscheint nur im PDF.
+\endif::[]
+
+'''
+//hint
+`ifdef::attribut[]` ... `endif::[]` für bedingte Blöcke.
+
+'''
+Dieser Text erscheint nur in der HTML-Ausgabe.
+
+Dieser Text erscheint nur im PDF.
+

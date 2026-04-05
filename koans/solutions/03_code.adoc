@@ -1,0 +1,41 @@
+== Code
+
+//tag::01[]
+[.target]
+```
+10 print "Hello World"
+20 goto 10
+```
+//end::01[]
+
+//tag::02[]
+[.target]
+[source, groovy]
+----
+10.times {
+    println "Hello World"
+}
+----
+//end::02[]
+
+//tag::03[]
+[.target]
+[source, groovy, linenums]
+----
+10.times {
+    println "Hello World"
+}
+----
+//end::03[]
+
+//tag::04[]
+[.target]
+[source, groovy]
+----
+10.times { // <1>
+    println "Hello World" // <2>
+}
+----
+<1> Loop 10 times
+<2> Print to console
+//end::04[]

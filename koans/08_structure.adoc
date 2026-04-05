@@ -1,0 +1,34 @@
+== Document Structure
+
+=== Headings
+
+include::solutions/08_structure.adoc[tag=01]
+
+TIP: Headings use `=` signs. More `=` means deeper nesting.
+
+[.input]
+Document Title (Level 0)
+
+Level 1 Section
+
+Level 2 Section
+
+Level 3 Section
+
+=== Attributes
+
+include::solutions/08_structure.adoc[tag=02]
+
+TIP: Define with `:name: value`, use with `\{name}`.
+
+[.input]
+Welcome to AsciiDocKoans version 2.0.
+
+=== Includes
+
+include::solutions/08_structure.adoc[tag=03]
+
+TIP: `include::` pulls in another file. This is the basis of modular documentation.
+
+[.input]
+(Content of 01_formatting.adoc should appear here)
