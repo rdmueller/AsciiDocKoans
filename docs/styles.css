@@ -111,3 +111,30 @@ table#score tr td {
 table#score {
     margin-left: 15px;
 }
+.progress-bar {
+    background: #ddd;
+    border-radius: 4px;
+    height: 20px;
+    margin: 10px 15px 5px 15px;
+    overflow: hidden;
+    position: relative;
+}
+.progress-fill {
+    background: #88ff88;
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    min-width: 0;
+}
+.progress-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 20px;
+    font-size: 11px;
+    font-family: arial, sans-serif;
+    color: #333;
+    font-weight: bold;
+}
