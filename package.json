@@ -1,7 +1,9 @@
 {
+  "scripts": {
+    "build": "cp node_modules/@asciidoctor/core/dist/browser/asciidoctor.js docs/asciidoctor/browser/asciidoctor.js",
+    "serve": "npx http-server docs/ -p 8091 -o"
+  },
   "dependencies": {
-    "asciidoctor": "^2.2.5",
-    "browserify": "^17.0.0",
-    "htmldiff-js": "^1.0.5"
+    "@asciidoctor/core": "^3.0.4"
   }
 }

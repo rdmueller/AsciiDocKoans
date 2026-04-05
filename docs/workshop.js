@@ -38,11 +38,20 @@ function getKoan() {
         .then(function (response) {
             if (response.ok) {
                 return response.text();
+            } else if (response.status === 404) {
+                // No more koans — show completion message
+                var content = document.getElementById('content');
+                content.insertAdjacentHTML("beforeend",
+                    "<hr /><div class='description'><h2>Congratulations!</h2>" +
+                    "<p>You have completed all available koans.</p></div>");
+                return null;
             } else {
                 alert("HTTP-Error: " + response.status);
+                return null;
             }
         })
         .then(function (koan) {
+            if (koan === null) return;
             var content = document.getElementById('content');
             //content.innerHTML += document.getElementById('template').innerHTML.replaceAll('%%',koanNum)
             koanParts = koan.split("''''")
