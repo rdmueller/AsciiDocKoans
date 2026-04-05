@@ -5,6 +5,11 @@ if (koanNum === "") {
 }
 var targetHtml = ""
 var asciidoctor = Asciidoctor();
+var kroki = AsciidoctorKroki;
+if (kroki && kroki.register) {
+    kroki.register(asciidoctor.Extensions);
+}
+var defaultAttrs = {'imagesdir': 'images', 'kroki-server-url': 'https://kroki.io'};
 
 function init(partNum) {
     console.log("init");
@@ -60,11 +65,11 @@ function getKoan() {
                     part = part.split("'''");
                     content.insertAdjacentHTML("beforeend", document.getElementById('template').innerHTML.replaceAll('%%',koanNum+'.'+partNum));
                     let description = document.getElementById('description'+koanNum+'.'+partNum);
-                    description.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + part[0], {to: 'html5'});
+                    description.innerHTML = asciidoctor.convert(part[0], {attributes: defaultAttrs}); // trusted koan content
                     var target = document.getElementById('target'+koanNum+'.'+partNum);
-                    target.innerHTML = asciidoctor.convert(part[1], {to: 'html5'});
+                    target.innerHTML = asciidoctor.convert(part[1], {attributes: defaultAttrs}); // trusted koan content
                     var hint = document.getElementById('hint'+koanNum+'.'+partNum);
-                    hint.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + part[2], {to: 'html5'});
+                    hint.innerHTML = asciidoctor.convert(part[2], {attributes: defaultAttrs}); // trusted koan content
                     var plain = document.getElementById('input'+koanNum+'.'+partNum);
                     plain.addEventListener('keyup', function(e) {
                         var regexp = new RegExp('^[a-z]+([0-9]+)[.]([0-9]+)$');
@@ -97,7 +102,7 @@ function getKoan() {
 function convert(koanNum, partNum) {
     console.log(koanNum+" - "+partNum);
     var content = document.getElementById('input'+koanNum+'.'+partNum).value;
-    var inputHtml = asciidoctor.convert(content, {to: 'html5'})
+    var inputHtml = asciidoctor.convert(content, {attributes: defaultAttrs})
     //inputHtml = inputHtml.replaceAll('&#10063;','❏');
     document.getElementById('rendered'+koanNum+'.'+partNum).innerHTML = inputHtml;
     var rendered = document.getElementById('rendered'+koanNum+'.'+partNum)

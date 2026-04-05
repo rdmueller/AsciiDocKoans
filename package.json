@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "build": "cp node_modules/asciidoctor/node_modules/@asciidoctor/core/dist/browser/asciidoctor.js docs/asciidoctor/browser/asciidoctor.js",
+    "build": "cp node_modules/asciidoctor/node_modules/@asciidoctor/core/dist/browser/asciidoctor.js docs/asciidoctor/browser/asciidoctor.js && cp node_modules/asciidoctor-kroki/dist/browser/asciidoctor-kroki.js docs/asciidoctor/browser/asciidoctor-kroki.js",
     "serve": "npx http-server docs/ -p 8091 -o"
   },
   "dependencies": {
-    "asciidoctor": "^2.2.5"
+    "asciidoctor": "^2.2.5",
+    "asciidoctor-kroki": "^0.18.1"
   }
 }
