@@ -1,0 +1,47 @@
+== Sentences and Paragraphs
+
+Sentences and paragraphs are really important to understand.
+
+=== One Paragraph
+
+include::solutions/02_paragraphs.adoc[tag=01]
+
+Split the following two sentences so that each has its own line.
+[.input]
+--
+Two sentences across several lines. They are all displayed as one paragraph.
+--
+
+Two sentences on separate lines will be shown as one paragraph.
+The line break is not visible in the output.
+
+Use it to format your text one sentence per line.
+This will result in nicer diffs when you put your documentation under version control.
+
+To avoid having to scroll lines with longer sentences, make sure that you have soft wraps activated.
+Click on the image:images/softwrap.png[width=30]-icon in IntelliJ.
+
+=== Two Paragraphs
+
+Now, how do you create two paragraphs?
+
+include::solutions/02_paragraphs.adoc[tag=02]
+
+[.input]
+--
+Two sentences displayed as two paragraphs.
+The additional space between them shows visually that they are distinct.
+--
+
+=== Line Breaks
+
+And if you want to add an extra line break without a new paragraph?
+
+include::solutions/02_paragraphs.adoc[tag=03]
+
+TIP: here are two extra line breaks hidden
+[.input]
+--
+Sometimes you don't want a new paragraph but just a new line.
+The space between these two lines is just if there was an automatic break within a paragraph.
+--

@@ -1,0 +1,34 @@
+== Admonitions
+
+=== Inline Admonition
+
+include::solutions/06_admonitions.adoc[tag=01]
+
+TIP: Start the line with `NOTE:` followed by a space.
+
+[.input]
+This is an important note for the reader.
+
+=== All Five Types
+
+include::solutions/06_admonitions.adoc[tag=02]
+
+[.input]
+A note.
+A tip.
+A warning.
+Something important.
+Caution advised.
+
+=== Block Admonition
+
+include::solutions/06_admonitions.adoc[tag=03]
+
+TIP: Use `[WARNING]` as attribute and `====` as block delimiter.
+
+[.input]
+--
+This action cannot be undone.
+
+Please create a backup first.
+--

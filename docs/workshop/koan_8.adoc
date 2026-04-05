@@ -1,0 +1,74 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Admonitions
+
+Admonitions sind hervorgehobene Hinweisblöcke. Die einfachste Form: Schlüsselwort gefolgt von Doppelpunkt und Text.
+
+https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/[📖, role=docs, target=docs]
+
+'''
+//solution
+NOTE: Dies ist ein Hinweis.
+
+'''
+//hint
+`NOTE:` gefolgt von einem Leerzeichen und dem Text.
+
+'''
+Dies ist ein Hinweis.
+
+''''
+
+Es gibt fünf Typen: NOTE, TIP, WARNING, IMPORTANT, CAUTION.
+
+'''
+//solution
+NOTE: Ein Hinweis für den Leser.
+
+TIP: Ein praktischer Tipp.
+
+WARNING: Eine Warnung.
+
+IMPORTANT: Wichtige Information.
+
+CAUTION: Vorsicht geboten.
+
+'''
+//hint
+Jedes Schlüsselwort gefolgt von `:` und dem Text.
+
+'''
+Ein Hinweis für den Leser.
+
+Ein praktischer Tipp.
+
+Eine Warnung.
+
+Wichtige Information.
+
+Vorsicht geboten.
+
+''''
+
+Für mehrzeilige Admonitions verwendet man die Block-Form mit vier Gleichheitszeichen.
+
+'''
+//solution
+[WARNING]
+====
+Diese Aktion kann nicht rückgängig gemacht werden.
+
+Bitte erstellen Sie vorher ein Backup.
+====
+
+'''
+//hint
+`[WARNING]` als Attribut, dann `====` als Block-Begrenzer.
+
+'''
+Diese Aktion kann nicht rückgängig gemacht werden.
+
+Bitte erstellen Sie vorher ein Backup.
+

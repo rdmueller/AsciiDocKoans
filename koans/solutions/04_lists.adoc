@@ -1,0 +1,30 @@
+== Lists
+
+//tag::01[]
+[.target]
+* Apples
+* Bananas
+* Cherries
+//end::01[]
+
+//tag::02[]
+[.target]
+. First step
+. Second step
+. Third step
+//end::02[]
+
+//tag::03[]
+[.target]
+* Fruits
+** Apples
+** Bananas
+* Vegetables
+** Carrots
+//end::03[]
+
+//tag::04[]
+[.target]
+AsciiDoc:: A text document format for writing documentation.
+Markdown:: A lightweight markup language.
+//end::04[]

@@ -1,0 +1,36 @@
+== Tables
+
+=== Simple Table
+
+include::solutions/05_tables.adoc[tag=01]
+
+TIP: Tables start and end with `|===`. Each cell starts with `|`.
+
+[.input]
+Name, Language, docToolchain, Groovy, dacli, Go
+
+=== Table with Header
+
+include::solutions/05_tables.adoc[tag=02]
+
+TIP: A blank line after the first row turns it into a header.
+
+[.input]
+|===
+| Name | Language
+| docToolchain
+| Groovy
+| dacli
+| Go
+|===
+
+=== Column Widths
+
+include::solutions/05_tables.adoc[tag=03]
+
+TIP: Use `[cols="1,3"]` to set relative column widths.
+
+[.input]
+|===
+| Short | This column should be much wider than the first one
+|===

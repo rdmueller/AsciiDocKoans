@@ -1,0 +1,25 @@
+== Document Structure
+
+//tag::01[]
+[.target]
+= Document Title (Level 0)
+
+== Level 1 Section
+
+=== Level 2 Section
+
+==== Level 3 Section
+//end::01[]
+
+//tag::02[]
+[.target]
+:project: AsciiDocKoans
+:version: 2.0
+
+Welcome to {project} version {version}.
+//end::02[]
+
+//tag::03[]
+[.target]
+\include::01_formatting.adoc[]
+//end::03[]

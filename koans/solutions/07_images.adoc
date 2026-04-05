@@ -1,0 +1,17 @@
+== Images
+
+//tag::01[]
+[.target]
+image::file.png[]
+//end::01[]
+
+//tag::02[]
+[.target]
+.A screenshot of the file chooser
+image::file.png[File chooser, width=200]
+//end::02[]
+
+//tag::03[]
+[.target]
+Click the icon image:file.png[icon, width=20] to open the file.
+//end::03[]

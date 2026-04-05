@@ -1,0 +1,29 @@
+== Admonitions
+
+//tag::01[]
+[.target]
+NOTE: This is an important note for the reader.
+//end::01[]
+
+//tag::02[]
+[.target]
+NOTE: A note.
+
+TIP: A tip.
+
+WARNING: A warning.
+
+IMPORTANT: Something important.
+
+CAUTION: Caution advised.
+//end::02[]
+
+//tag::03[]
+[.target]
+[WARNING]
+====
+This action cannot be undone.
+
+Please create a backup first.
+====
+//end::03[]
