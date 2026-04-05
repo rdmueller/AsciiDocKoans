@@ -157,6 +157,55 @@ table#score {
         min-width: 120px;
     }
 }
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1e1e2e;
+        color: #cdd6f4;
+    }
+    #nav {
+        background-color: rgba(30, 30, 46, 0.95);
+        border-right-color: #45475a;
+    }
+    div.target {
+        border-color: #585b70;
+        background: #1e1e2e;
+    }
+    div.target:before, div.rendered:before, div.rendered.correct:before {
+        background-color: #1e1e2e;
+        color: #a6adc8;
+    }
+    div.rendered {
+        border-color: #585b70;
+        background: #1e1e2e;
+    }
+    .input {
+        background: #181825;
+        color: #cdd6f4;
+        border: 1px solid #45475a;
+    }
+    .hint {
+        background: #2a2a3e;
+        border-color: #45475a;
+        color: #cdd6f4;
+    }
+    .progress-bar {
+        background: #45475a;
+    }
+    .progress-label {
+        color: #cdd6f4;
+    }
+    a { color: #89b4fa; }
+    button#next {
+        background: #313244;
+        color: #cdd6f4;
+        border: 1px solid #45475a;
+    }
+    button#next:hover {
+        background: #45475a;
+    }
+    .description { color: #cdd6f4; }
+    #score, table#score { color: #a6adc8; }
+}
 .progress-bar {
     background: #ddd;
     border-radius: 4px;
