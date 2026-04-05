@@ -119,6 +119,44 @@ table#score tr td {
 table#score {
     margin-left: 15px;
 }
+@media (max-width: 768px) {
+    #nav {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 2px solid #888888;
+        padding: 10px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+    }
+    #nav h2 {
+        margin: 0;
+        flex: 1;
+    }
+    #nav > span {
+        display: none;
+    }
+    #nav #score {
+        display: none;
+    }
+    #content {
+        padding-left: 0;
+        position: static;
+        padding: 0 15px 2em 15px;
+    }
+    .input {
+        font-size: 14px;
+        min-height: 6em;
+    }
+    .progress-bar {
+        margin: 0;
+        flex: 1;
+        min-width: 120px;
+    }
+}
 .progress-bar {
     background: #ddd;
     border-radius: 4px;
