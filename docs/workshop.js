@@ -67,17 +67,19 @@ function getKoan() {
                     hint.innerHTML = asciidoctor.convert(":imagesdir: images\n\n" + part[2], {to: 'html5'});
                     var plain = document.getElementById('input'+koanNum+'.'+partNum);
                     plain.addEventListener('keyup', function(e) {
-                        let regexp = new RegExp('^[a-z]+([0-9]+)[.]([0-9]+)$');
-                        let match = regexp.exec(e.target.id);
+                        var regexp = new RegExp('^[a-z]+([0-9]+)[.]([0-9]+)$');
+                        var match = regexp.exec(e.target.id);
                         console.log(e.target.id);
                         console.log(match);
                         convert(match[1], match[2]);
+                        saveInput(match[1], match[2], e.target.value);
                     });
                     plain.addEventListener('input', autoResize, false);
                     plain.addEventListener('focusin', autoResize, false);
                     plain.style.height = 'auto';
                     plain.style.height = plain.scrollHeight + 'px';
-                    plain.value = part[3];
+                    var saved = loadInput(koanNum, partNum);
+                    plain.value = saved !== null ? saved : part[3];
                     init(partNum);
                     convert(koanNum, partNum);
                     partNum++;
@@ -106,6 +108,7 @@ function convert(koanNum, partNum) {
         //correct
         rendered.style.borderColor = '#88ff88';
         rendered.classList.add("correct");
+        clearInput(koanNum, partNum);
         countScore();
 
     } else {
@@ -156,6 +159,19 @@ function countScore() {
 function autoResize() {
     this.style.height = 'auto';
     this.style.height = this.scrollHeight + 'px';
+}
+var saveTimer = null;
+function saveInput(koan, part, value) {
+    if (saveTimer) clearTimeout(saveTimer);
+    saveTimer = setTimeout(function() {
+        try { localStorage.setItem('koan-' + koan + '-' + part, value); } catch(e) {}
+    }, 300);
+}
+function loadInput(koan, part) {
+    try { return localStorage.getItem('koan-' + koan + '-' + part); } catch(e) { return null; }
+}
+function clearInput(koan, part) {
+    try { localStorage.removeItem('koan-' + koan + '-' + part); } catch(e) {}
 }
 getKoan();
 
