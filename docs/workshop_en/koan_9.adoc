@@ -1,0 +1,76 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Images
+
+Block images are included with `image::`. The filename goes between the double colons and the square brackets.
+
+https://docs.asciidoctor.org/asciidoc/latest/macros/images/[📖, role=docs, target=docs]
+
+'''
+//solution
+image::file.png[]
+
+'''
+//hint
+`image::filename.png[]` — two colons for block images.
+
+'''
+file.png
+
+''''
+
+Images can have a title, alt text and a width.
+
+'''
+//solution
+.A screenshot of the file chooser
+image::file.png[File chooser, width=200]
+
+'''
+//hint
+Title with `.` before the image macro. Alt text and width inside `[]`.
+
+'''
+image::file.png[]
+
+''''
+
+Inline images use only one colon and appear within the text flow.
+
+'''
+//solution
+Click the icon image:file.png[Icon, width=20] to open the file.
+
+'''
+//hint
+`image:filename.png[]` — only one colon for inline images.
+
+'''
+Click the icon to open the file.
+
+''''
+
+Diagrams can be written as PlantUML directly in the document. With Kroki they are rendered automatically.
+
+'''
+//solution
+[plantuml]
+----
+@startuml
+Alice -> Bob: Hello
+Bob -> Alice: Hi!
+@enduml
+----
+
+'''
+//hint
+`[plantuml]` as attribute before the code block.
+
+'''
+@startuml
+Alice -> Bob: Hello
+Bob -> Alice: Hi!
+@enduml
+

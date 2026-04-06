@@ -1,0 +1,103 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Source Code
+
+Code blocks are enclosed with four hyphens `----`.
+
+https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/[📖, role=docs, target=docs]
+
+'''
+//solution
+----
+10 print "Hello World"
+20 goto 10
+----
+
+'''
+//hint
+Four hyphens before and after the code.
+
+'''
+10 print "Hello World"
+20 goto 10
+
+''''
+
+Syntax highlighting is activated with a `[source]` attribute and a language name.
+
+'''
+//solution
+[source, groovy]
+----
+println "Hello World"
+if (true) {
+    println "AsciiDoc is great"
+}
+----
+
+'''
+//hint
+`[source, groovy]` before the hyphens.
+
+'''
+println "Hello World"
+if (true) {
+    println "AsciiDoc is great"
+}
+
+''''
+
+Callouts mark important lines in code with numbered references.
+
+https://docs.asciidoctor.org/asciidoc/latest/verbatim/callouts/[📖, role=docs, target=docs]
+
+'''
+//solution
+[source, groovy]
+----
+println "Hello World" // <1>
+if (true) {
+    println "AsciiDoc is great" // <2>
+}
+----
+<1> Output to the console
+<2> Conditional output
+
+'''
+//hint
+`// <1>` in the code, `<1> explanation` below the block.
+
+'''
+[source, groovy]
+----
+println "Hello World"
+if (true) {
+    println "AsciiDoc is great"
+}
+----
+Output to the console
+Conditional output
+
+''''
+
+You can also create simple literal blocks without syntax highlighting. Four dots `....` create a literal block.
+
+'''
+//solution
+....
+This is a literal block.
+  Indentation is preserved.
+    No syntax highlighting.
+....
+
+'''
+//hint
+Four dots `....` instead of four hyphens.
+
+'''
+This is a literal block.
+  Indentation is preserved.
+    No syntax highlighting.
+

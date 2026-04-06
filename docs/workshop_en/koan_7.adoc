@@ -1,0 +1,130 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Tables
+
+Tables start and end with `|===`. Each cell starts with `|`.
+
+https://docs.asciidoctor.org/asciidoc/latest/tables/build-a-basic-table/[📖, role=docs, target=docs]
+
+'''
+//solution
+|===
+| Column 1 | Column 2
+
+| Cell A
+| Cell B
+
+| Cell C
+| Cell D
+|===
+
+'''
+//hint
+`|===` as start and end. Each cell with `|`.
+
+'''
+Column 1, Column 2, Cell A, Cell B, Cell C, Cell D
+
+''''
+
+The first row automatically becomes a header when followed by a blank line.
+
+'''
+//solution
+|===
+| Name | Language
+
+| docToolchain
+| Groovy
+
+| dacli
+| Go
+|===
+
+'''
+//hint
+A blank line after the first row turns it into a header.
+
+'''
+|===
+| Name | Language
+| docToolchain
+| Groovy
+| dacli
+| Go
+|===
+
+''''
+
+Column widths can be controlled with the `cols` attribute.
+
+'''
+//solution
+[cols="1,3"]
+|===
+| Short | Description
+
+| SA
+| Semantic Anchors
+
+| DaC
+| Docs-as-Code
+|===
+
+'''
+//hint
+`[cols="1,3"]` before `|===` sets a 1:3 ratio.
+
+'''
+|===
+| Short | Description
+
+| SA
+| Semantic Anchors
+
+| DaC
+| Docs-as-Code
+|===
+
+''''
+
+With `a` as column type, AsciiDoc content can be written directly in cells.
+
+'''
+//solution
+[cols="1,2a"]
+|===
+| Feature | Details
+
+| Lists
+|
+* One
+* Two
+* Three
+
+| Code
+|
+[source]
+----
+println "hi"
+----
+|===
+
+'''
+//hint
+`[cols="1,2a"]` — the `a` stands for AsciiDoc content in that column.
+
+'''
+[cols="1,2"]
+|===
+| Feature | Details
+
+| Lists
+| One, Two, Three
+
+| Code
+| println "hi"
+|===
+

@@ -1,0 +1,112 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Headings
+
+Headings are marked with one or more `=` followed by a space, depending on the depth.
+
+A heading with just _one_ `=` is the document title and should only appear once.
+
+Sub-documents should always start with heading level `==`.
+
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#section-titles[📖, role=docs, target=docs]
+
+'''
+//solution
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+'''
+//hint
+`=` for Level 0, `==` for Level 1, `===` for Level 2 and so on. Don't forget the space after the equals signs.
+
+'''
+// Your input
+Document Title (Level 0)
+
+Level 1 Section Title
+
+Level 1 Section Title
+
+Level 2 Section Title
+
+Level 3 Section Title
+
+
+// next task
+
+''''
+
+AsciiDoc supports automatic heading numbering.
+
+'''
+//solution
+:numbered:
+
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+'''
+//hint
+The `:numbered:` attribute at the top of the document enables automatic numbering.
+
+'''
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+''''
+
+Each heading can be automatically linked.
+
+'''
+//solution
+:sectanchors:
+
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+'''
+//hint
+The `:sectanchors:` attribute adds anchor links to each heading.
+
+'''
+= Document Title (Level 0)
+
+== Level 1 Section Title
+
+== Level 1 Section Title
+
+=== Level 2 Section Title
+
+==== Level 3 Section Title
+
+

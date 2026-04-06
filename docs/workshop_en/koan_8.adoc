@@ -1,0 +1,74 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Admonitions
+
+Admonitions are highlighted callout blocks. The simplest form: a keyword followed by a colon and text.
+
+https://docs.asciidoctor.org/asciidoc/latest/blocks/admonitions/[📖, role=docs, target=docs]
+
+'''
+//solution
+NOTE: This is a note.
+
+'''
+//hint
+`NOTE:` followed by a space and the text.
+
+'''
+This is a note.
+
+''''
+
+There are five types: NOTE, TIP, WARNING, IMPORTANT, CAUTION.
+
+'''
+//solution
+NOTE: A note for the reader.
+
+TIP: A practical tip.
+
+WARNING: A warning.
+
+IMPORTANT: Important information.
+
+CAUTION: Proceed with caution.
+
+'''
+//hint
+Each keyword followed by `:` and the text.
+
+'''
+A note for the reader.
+
+A practical tip.
+
+A warning.
+
+Important information.
+
+Proceed with caution.
+
+''''
+
+For multi-line admonitions, use the block form with four equals signs.
+
+'''
+//solution
+[WARNING]
+====
+This action cannot be undone.
+
+Please create a backup first.
+====
+
+'''
+//hint
+`[WARNING]` as attribute, then `====` as block delimiter.
+
+'''
+This action cannot be undone.
+
+Please create a backup first.
+

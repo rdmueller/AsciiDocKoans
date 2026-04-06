@@ -1,0 +1,51 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+=== Links
+
+Change the text below so that it links to https://google.com as shown.
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#links[📖, role=docs, target=docs]
+
+'''
+//solution
+A simple link looks like this: https://google.com
+
+'''
+//hint
+URLs are automatically displayed as links. Just write the URL in the text.
+
+'''
+// Your input
+
+A simple link looks like this:
+
+
+''''
+
+You can also display custom text as a link.
+
+'''
+
+You can also use custom link text: https://google.com[Google]
+
+'''
+//hint
+Square brackets after the URL: `https://url[link text]`
+
+'''
+You can also use custom link text: https://google.com
+
+''''
+
+For relative links within a project, use the `link:` macro.
+
+'''
+A relative link looks like this: link:about.html[]
+
+'''
+//hint
+`link:filename.html[]` for relative links.
+
+'''
+// Your input
+A relative link looks like this: about.html
+

@@ -53,6 +53,33 @@ html, body {
     margin-bottom: 4px;
 }
 
+.lang-switch {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 12px;
+    font-size: 12px;
+}
+
+.lang-switch a {
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #666;
+    border: 1px solid #d0d7de;
+    transition: all 0.2s;
+}
+
+.lang-switch a:hover {
+    border-color: #999;
+    color: #333;
+}
+
+.lang-switch a.active {
+    background: #1976d2;
+    color: #fff;
+    border-color: #1976d2;
+}
+
 #content {
     flex: 1;
     min-width: 0;
