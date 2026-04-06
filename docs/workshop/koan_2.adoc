@@ -25,13 +25,13 @@ Dieser Text ist fett.
 
 // Target
 '''
-Dieser Text if _kursiv_.
+Dieser Text ist _kursiv_.
 
 '''
 
 // Input
 '''
-Dieser Text if kursiv.
+Dieser Text ist kursiv.
 
 ''''
 

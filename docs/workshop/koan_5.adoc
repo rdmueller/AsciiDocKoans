@@ -26,7 +26,7 @@ https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#section-tit
 
 '''
 //hint
-
+`=` für Level 0, `==` für Level 1, `===` für Level 2 usw. Leerzeichen nach den Gleichheitszeichen nicht vergessen.
 
 '''
 // Deine Eingabe
@@ -45,7 +45,7 @@ Level 3 Section Title
 
 ''''
 
-AsciiDoc beherrscht natürlich automatische Nummerierung.
+AsciiDoc beherrscht automatische Nummerierung der Überschriften.
 
 '''
 //solution
@@ -63,7 +63,7 @@ AsciiDoc beherrscht natürlich automatische Nummerierung.
 
 '''
 //hint
-
+Das Attribut `:numbered:` am Anfang des Dokuments aktiviert die automatische Nummerierung.
 
 '''
 = Document Title (Level 0)
@@ -96,7 +96,7 @@ Jede Überschrift kann automatisch verlinkt werden.
 
 '''
 //hint
-
+Das Attribut `:sectanchors:` fügt Anker-Links zu jeder Überschrift hinzu.
 
 '''
 = Document Title (Level 0)
@@ -108,6 +108,5 @@ Jede Überschrift kann automatisch verlinkt werden.
 === Level 2 Section Title
 
 ==== Level 3 Section Title
-
 
 
