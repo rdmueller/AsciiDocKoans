@@ -1,4 +1,7 @@
 
+// Koan folder - can be overridden before loading this script
+var koanFolder = window.koanFolder || "workshop";
+
 let koanNum = getCookie("koanNum");
 if (koanNum === "") {
   koanNum = 1;
@@ -16,7 +19,7 @@ var totalExercises = 0;
 function countAllExercises() {
     var koan = 1;
     function fetchNext() {
-        fetch("workshop/koan_" + koan + ".adoc")
+        fetch(koanFolder + "/koan_" + koan + ".adoc")
             .then(function(response) {
                 if (!response.ok) {
                     // Done counting
@@ -79,7 +82,7 @@ function getCookie(cname) {
     return "";
 }
 function getKoan() {
-    fetch("workshop/koan_"+koanNum+".adoc")
+    fetch(koanFolder + "/koan_"+koanNum+".adoc")
         .then(function (response) {
             if (response.ok) {
                 return response.text();

@@ -1,0 +1,104 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Attributes and Document Properties
+
+Attributes control the behavior of AsciiDoc documents.
+
+https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes/[📖, role=docs, target=docs]
+
+The `:toc:` attribute generates a table of contents.
+
+'''
+//solution
+:toc:
+
+= My Document
+
+== Introduction
+
+== Architecture
+
+'''
+//hint
+`:toc:` at the top of the document. The headings automatically form the table of contents.
+
+'''
+= My Document
+
+== Introduction
+
+== Architecture
+
+''''
+
+The `:experimental:` attribute enables UI macros like `kbd:[]` for keyboard shortcuts.
+
+'''
+//solution
+:experimental:
+
+Press kbd:[Ctrl+S] to save.
+
+'''
+//hint
+`:experimental:` at the top, then `kbd:[keys]` in the text.
+
+'''
+Press Ctrl+S to save.
+
+''''
+
+The `:numbered:` attribute automatically numbers headings.
+
+'''
+//solution
+:numbered:
+
+= Project Handbook
+
+== Introduction
+
+== Architecture
+
+=== Building Blocks
+
+'''
+//hint
+`:numbered:` at the top of the document.
+
+'''
+= Project Handbook
+
+== Introduction
+
+== Architecture
+
+=== Building Blocks
+
+''''
+
+The `:sectanchors:` attribute adds clickable anchor links to each heading.
+
+'''
+//solution
+:sectanchors:
+
+= Project Handbook
+
+== Introduction
+
+== Architecture
+
+'''
+//hint
+`:sectanchors:` at the top of the document.
+
+'''
+= Project Handbook
+
+== Introduction
+
+== Architecture
+

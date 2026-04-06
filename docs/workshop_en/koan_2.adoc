@@ -1,0 +1,60 @@
+Well done. +
+Let's continue with the next section.
+
+=== Simple Formatting
+
+Change the text below so that the words are displayed as bold, italic or monospace, as shown in the examples.
+
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#text-formatting[📖, role=docs, target=docs] <= here you can find help on AsciiDoc formatting.
+
+
+// Target
+'''
+
+This text is *bold*.
+
+//hint
+'''
+
+//Input
+'''
+This text is bold.
+
+''''
+
+
+// Target
+'''
+This text is _italic_.
+
+'''
+
+// Input
+'''
+This text is italic.
+
+''''
+
+// Target
+'''
+This text is `monospace`.
+
+'''
+
+// Input
+'''
+This text is monospace.
+
+''''
+...and now all together
+
+// Target
+'''
+
+Simple formatting includes *bold* and _italic_ or `monospace`.
+
+'''
+
+'''
+Simple formatting includes bold and italic or monospace.
+

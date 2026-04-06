@@ -1,0 +1,42 @@
+ifndef::imagesdir[:imagesdir: ../images]
+== Learning AsciiDoc with Koans
+
+This interactive tutorial teaches you the key elements of AsciiDoc syntax.
+Each page presents a small task by showing a formatted result.
+
+Your task is to format a plain text using AsciiDoc so that it matches the target result.
+When you succeed, the red border turns green and you can move on to the next task.
+
+Feel free to consult the documentation as you go.
+These exercises follow the https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference[Syntax Quick Reference]
+
+Let's start with...
+
+=== Paragraphs
+
+Paragraphs behave differently than you might expect.
+
+Try to achieve the formatting shown below.
+You need to split the text into two paragraphs and add a line break in the second one.
+
+'''
+//solution
+A first line in a first paragraph.
+
+A second line and +
+a third line in a second paragraph.
+
+'''
+//hint
+
+Here is the unformatted text and your input field.
+Change the source so that the formatted text matches the target above. +
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#paragraphs[📖, role=docs, target=docs]
+
+'''
+// Your input
+
+A first line in a first paragraph.
+A second line and
+a third line in a second paragraph.
+

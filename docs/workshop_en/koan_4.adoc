@@ -1,0 +1,81 @@
+ifndef::imagesdir[:imagesdir: ../images]
+
+//Recap
+
+=== Lists
+
+Lists are among the simple formatting elements.
+https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#lists[📖, role=docs, target=docs]
+
+'''
+//solution
+* Milk
+* Cheese
+* Eggs
+
+'''
+//hint
+Each list item starts with `*` followed by a space.
+
+'''
+// Your input
+Milk
+Cheese
+Eggs
+
+''''
+Nested lists use more asterisks for deeper levels.
+
+'''
+//solution
+* Shopping:
+** Milk
+** Cheese
+** Eggs
+
+'''
+//hint
+`**` for the second level, `***` for the third.
+
+'''
+Shopping:
+Milk
+Cheese
+Eggs
+
+''''
+Numbered lists use a period instead of an asterisk.
+
+'''
+//solution
+. Milk
+. Cheese
+. Eggs
+
+'''
+//hint
+`.` instead of `*` — numbering is automatic.
+
+'''
+Milk
+Cheese
+Eggs
+
+''''
+Checklists combine unordered lists with checkboxes.
+
+'''
+//solution
+* [ ] Milk
+* [ ] Cheese
+* [ ] Eggs
+
+'''
+//hint
+`* [ ]` for an unchecked box, `* [x]` for a checked one.
+
+'''
+Milk
+Cheese
+Eggs
+
