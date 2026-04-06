@@ -10,6 +10,46 @@ if (kroki && kroki.register) {
     kroki.register(asciidoctor.Extensions);
 }
 var defaultAttrs = {'imagesdir': 'images', 'kroki-server-url': 'https://kroki.io'};
+var totalExercises = 0;
+
+// Count all exercises across all koans at startup
+function countAllExercises() {
+    var koan = 1;
+    function fetchNext() {
+        fetch("workshop/koan_" + koan + ".adoc")
+            .then(function(response) {
+                if (!response.ok) {
+                    // Done counting
+                    updateProgressTotal();
+                    return;
+                }
+                return response.text();
+            })
+            .then(function(text) {
+                if (!text) return;
+                // Count sub-parts (separated by '''')
+                var parts = text.split("''''");
+                totalExercises += parts.length;
+                koan++;
+                fetchNext();
+            });
+    }
+    fetchNext();
+}
+
+function updateProgressTotal() {
+    var label = document.getElementById('progress-label');
+    if (label && totalExercises > 0) {
+        var results = document.getElementsByClassName('rendered');
+        var score = 0;
+        for (var i = 0; i < results.length; i++) {
+            if (results[i].classList.contains('correct')) score++;
+        }
+        label.textContent = score + ' / ' + totalExercises;
+        var fill = document.getElementById('progress-fill');
+        if (fill) fill.style.width = Math.round(score / totalExercises * 100) + '%';
+    }
+}
 
 function init(partNum) {
     console.log("init");
@@ -153,7 +193,7 @@ function countScore() {
         }
     }
     document.getElementById('score').innerHTML = scores+"</table>"; // trusted static content only
-    var total = results.length;
+    var total = totalExercises > 0 ? totalExercises : results.length;
     var pct = total > 0 ? Math.round(score / total * 100) : 0;
     var fill = document.getElementById('progress-fill');
     var label = document.getElementById('progress-label');
@@ -178,5 +218,6 @@ function loadInput(koan, part) {
 function clearInput(koan, part) {
     try { localStorage.removeItem('koan-' + koan + '-' + part); } catch(e) {}
 }
+countAllExercises();
 getKoan();
 
