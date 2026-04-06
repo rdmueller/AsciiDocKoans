@@ -4,8 +4,7 @@ ifndef::imagesdir[:imagesdir: ../images]
 
 === Listen
 
-//challenge
-Listen gehören auch noch zu den einfachen Formatierungen.
+Listen gehören zu den einfachen Formatierungen.
 https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#lists[📖, role=docs, target=docs]
 
 '''
@@ -16,7 +15,7 @@ https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#lists[📖,
 
 '''
 //hint
-
+Jeder Listenpunkt beginnt mit `*` gefolgt von einem Leerzeichen.
 
 '''
 // Deine Eingabe
@@ -25,8 +24,7 @@ Käse
 Eier
 
 ''''
-// next task
-verschachtelte Listen
+Verschachtelte Listen verwenden mehr Sternchen für tiefere Ebenen.
 
 '''
 //solution
@@ -37,7 +35,7 @@ verschachtelte Listen
 
 '''
 //hint
-
+`**` für die zweite Ebene, `***` für die dritte.
 
 '''
 Einkaufen:
@@ -46,8 +44,7 @@ Käse
 Eier
 
 ''''
-// next task
-nummerierte Listen
+Nummerierte Listen verwenden einen Punkt statt eines Sternchens.
 
 '''
 //solution
@@ -57,7 +54,7 @@ nummerierte Listen
 
 '''
 //hint
-
+`.` statt `*` — die Nummerierung erfolgt automatisch.
 
 '''
 Milch
@@ -65,8 +62,7 @@ Käse
 Eier
 
 ''''
-// next task
-Checkliste
+Checklisten kombinieren ungeordnete Listen mit Checkboxen.
 
 '''
 //solution
@@ -76,11 +72,10 @@ Checkliste
 
 '''
 //hint
-
+`* [ ]` für eine leere Checkbox, `* [x]` für eine angekreuzte.
 
 '''
 Milch
 Käse
 Eier
-
 

@@ -2,7 +2,7 @@ ifndef::imagesdir[:imagesdir: ../images]
 
 === Links
 
-Ändere den untenstehenden Text so ab, der Text wie gezeigt auf https://google.de verlinkt.
+Ändere den untenstehenden Text so ab, dass der Text wie gezeigt auf https://google.de verlinkt wird.
 https://docs.asciidoctor.org/asciidoc/latest/syntax-quick-reference/#links[📖, role=docs, target=docs]
 
 '''
@@ -11,7 +11,7 @@ Ein einfacher Link sieht wie folgt aus: https://google.de
 
 '''
 //hint
-
+URLs werden automatisch als Link dargestellt. Einfach die URL in den Text schreiben.
 
 '''
 // Deine Eingabe
@@ -21,26 +21,31 @@ Ein einfacher Link sieht wie folgt aus:
 
 ''''
 
-//target
+Es lässt sich aber auch ein beliebiger Text als Link anzeigen.
+
 '''
 
 Es lässt sich aber auch ein beliebiger Text verlinken: https://google.de[Google]
 
 '''
+//hint
+Eckige Klammern hinter der URL: `https://url[Linktext]`
 
 '''
 Es lässt sich aber auch ein beliebiger Text verlinken: https://google.de
 
 ''''
 
-//target
+Für relative Links innerhalb des Projekts gibt es das `link:`-Macro.
+
 '''
 Ein relativer Link geht wie folgt: link:about.html[]
 
+'''
 //hint
-'''
+`link:dateiname.html[]` für relative Links.
 
-// Deine Eingabe
 '''
+// Deine Eingabe
 Ein relativer Link geht wie folgt: about.html
 

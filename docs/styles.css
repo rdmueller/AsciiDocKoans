@@ -100,60 +100,60 @@ table#score tr td {
 
 /* --- Exercise Boxes --- */
 div.target {
-    border: 2px solid #b0bec5;
-    padding: 16px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    background: #fff;
+    border: none;
+    border-left: 3px solid #b0bec5;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    background: #f5f7fa;
     position: relative;
 }
 
 div.target:before {
     content: 'target';
-    font-size: 11px;
+    display: block;
+    font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #78909c;
-    background: #fff;
-    position: absolute;
-    top: -10px;
-    left: 12px;
-    padding: 0 6px;
+    letter-spacing: 1px;
+    color: #90a4ae;
+    margin-bottom: 8px;
 }
 
 div.rendered {
-    border: 2px solid #e57373;
-    padding: 16px;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    background: #fff;
+    border: none;
+    border-left: 3px solid #e57373;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    background: #fef5f5;
     position: relative;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, background 0.3s ease;
 }
 
 div.rendered:before {
     content: 'your result';
-    font-size: 11px;
+    display: block;
+    font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     color: #e57373;
-    background: #fff;
-    position: absolute;
-    top: -10px;
-    left: 12px;
-    padding: 0 6px;
+    margin-bottom: 8px;
     transition: color 0.3s ease;
 }
 
 div.rendered.correct {
-    border-color: #4caf50;
+    border-left-color: #4caf50;
+    background: #f0faf0;
 }
 
 div.rendered.correct:before {
     content: 'correct ✓';
     color: #4caf50;
+}
+
+/* Hide empty hints */
+.hint:empty {
+    display: none;
 }
 
 /* --- Hint / Instructions --- */
@@ -364,27 +364,26 @@ ins.mod {
     }
 
     div.target {
-        border-color: #45475a;
-        background: #1e1e2e;
+        border-left-color: #45475a;
+        background: #181825;
     }
 
     div.target:before {
-        background: #1e1e2e;
         color: #6c7086;
     }
 
     div.rendered {
-        border-color: #f38ba8;
-        background: #1e1e2e;
+        border-left-color: #f38ba8;
+        background: #1e1525;
     }
 
     div.rendered:before {
-        background: #1e1e2e;
         color: #f38ba8;
     }
 
     div.rendered.correct {
-        border-color: #a6e3a1;
+        border-left-color: #a6e3a1;
+        background: #1a2520;
     }
 
     div.rendered.correct:before {
