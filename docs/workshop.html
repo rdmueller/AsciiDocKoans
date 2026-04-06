@@ -1,25 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AsciiDoc Koans - Workshop</title>
     <script src="asciidoctor/browser/asciidoctor.js"></script>
     <script src="asciidoctor/browser/asciidoctor-kroki.js"></script>
-    <link rel="stylesheet" href="asciidoctor/css/asciidoctor.css"></link>
-    <link rel="stylesheet" href="styles.css"></link>
+    <link rel="stylesheet" href="asciidoctor/css/asciidoctor.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="nav">
-    <h2>AsciiDoc Koans</h2>
-    <!--ul>
-        <li><a href="index.html">Start</a></li>
-        <li><a href="about.html">&Uuml;ber</a></li>
-    </ul-->
-    <div class="progress-bar">
-        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
-        <span class="progress-label" id="progress-label">0 / 0</span>
+<div class="layout">
+    <div id="nav">
+        <h2>AsciiDoc Koans</h2>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+            <span class="progress-label" id="progress-label">0 / 0</span>
+        </div>
+        <span>Score:</span>
+        <div id="score"></div>
     </div>
-    <span>Score:<br /></span>
-    <div id="score"></div>
-
+    <div id="content">
+    </div>
 </div>
+
 <div id="template" style="display:none;">
     <hr />
     <div id="description%%" class="description">
@@ -28,17 +32,15 @@
     <div id="target%%" class="target"></div>
     <div id="hint%%" class="hint"></div>
     <div id="rendered%%" class="rendered"></div>
-    <textarea id="input%%" class="input" style="width: 100%;" >
+    <textarea id="input%%" class="input">
     </textarea>
 </div>
 <div id="templateButton" style="display:none;">
-    <div style="text-align: right; margin-top:15px;">
+    <div style="text-align: right; margin-top: 20px;">
         <button id="next" onclick="next();">Next</button>
     </div>
 </div>
-<div id="content">
-</div>
 
-</body>
 <script src="workshop.js"></script>
+</body>
 </html>
