@@ -49,34 +49,9 @@ if (true) {
 
 ''''
 
-Zeilennummern machen langen Code lesbarer.
-
-'''
-//solution
-[source, groovy, linenums]
-----
-println "Hello World"
-if (true) {
-    println "AsciiDoc is great"
-}
-----
-
-'''
-//hint
-Das Attribut `linenums` hinzufügen.
-
-'''
-[source, groovy]
-----
-println "Hello World"
-if (true) {
-    println "AsciiDoc is great"
-}
-----
-
-''''
-
 Callouts markieren wichtige Stellen im Code mit nummerierten Referenzen.
+
+https://docs.asciidoctor.org/asciidoc/latest/verbatim/callouts/[📖, role=docs, target=docs]
 
 '''
 //solution
@@ -104,4 +79,25 @@ if (true) {
 ----
 Ausgabe auf der Konsole
 Bedingte Ausgabe
+
+''''
+
+Auch ohne `[source]` kann man einfache Literalblöcke erstellen. Vier Punkte `....` erzeugen einen Literal-Block ohne Syntax-Highlighting.
+
+'''
+//solution
+....
+Dies ist ein Literal-Block.
+  Einrückungen bleiben erhalten.
+    Kein Syntax-Highlighting.
+....
+
+'''
+//hint
+Vier Punkte `....` statt vier Bindestriche.
+
+'''
+Dies ist ein Literal-Block.
+  Einrückungen bleiben erhalten.
+    Kein Syntax-Highlighting.
 
