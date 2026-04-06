@@ -2,47 +2,13 @@ ifndef::imagesdir[:imagesdir: ../images]
 
 //Recap
 
-=== Attribute
+=== Attribute und Dokumenteigenschaften
 
-Attribute sind Variablen, die mit `:name: wert` definiert werden und mit `\{name}` referenziert werden.
+Attribute steuern das Verhalten von AsciiDoc-Dokumenten.
 
 https://docs.asciidoctor.org/asciidoc/latest/attributes/document-attributes/[📖, role=docs, target=docs]
 
-'''
-//solution
-:projekt: AsciiDocKoans
-:version: 2.0
-
-Willkommen bei {projekt} Version {version}.
-
-'''
-//hint
-`:name: wert` zum Definieren, `\{name}` zum Verwenden.
-
-'''
-Willkommen bei AsciiDocKoans Version 2.0.
-
-''''
-
-Attribute eignen sich auch zum Setzen von Dokumenteigenschaften wie Autor und Datum.
-
-'''
-//solution
-:author: Ralf D. Müller
-:revdate: 2026-04-06
-
-Dieses Dokument wurde von {author} am {revdate} erstellt.
-
-'''
-//hint
-`:author:` und `:revdate:` sind vordefinierte AsciiDoc-Attribute.
-
-'''
-Dieses Dokument wurde von Ralf D. Müller am 2026-04-06 erstellt.
-
-''''
-
-Mit dem Attribut `:toc:` lässt sich ein Inhaltsverzeichnis erzeugen.
+Mit dem Attribut `:toc:` wird ein Inhaltsverzeichnis erzeugt.
 
 '''
 //solution
@@ -67,7 +33,7 @@ Mit dem Attribut `:toc:` lässt sich ein Inhaltsverzeichnis erzeugen.
 
 ''''
 
-Attribute können auch als Schalter dienen: gesetzt oder nicht gesetzt.
+Das Attribut `:experimental:` aktiviert UI-Macros wie `kbd:[]` für Tastenkombinationen.
 
 '''
 //solution
@@ -77,8 +43,62 @@ Drücke kbd:[Ctrl+S] zum Speichern.
 
 '''
 //hint
-`:experimental:` aktiviert UI-Macros wie `kbd:[]` für Tastenkombinationen.
+`:experimental:` am Anfang, dann `kbd:[Tasten]` im Text.
 
 '''
 Drücke Ctrl+S zum Speichern.
+
+''''
+
+Mit `:numbered:` werden Überschriften automatisch nummeriert.
+
+'''
+//solution
+:numbered:
+
+= Projekthandbuch
+
+== Einleitung
+
+== Architektur
+
+=== Bausteinsicht
+
+'''
+//hint
+`:numbered:` am Anfang des Dokuments.
+
+'''
+= Projekthandbuch
+
+== Einleitung
+
+== Architektur
+
+=== Bausteinsicht
+
+''''
+
+Mit `:sectanchors:` bekommt jede Überschrift einen klickbaren Anker-Link.
+
+'''
+//solution
+:sectanchors:
+
+= Projekthandbuch
+
+== Einleitung
+
+== Architektur
+
+'''
+//hint
+`:sectanchors:` am Anfang des Dokuments.
+
+'''
+= Projekthandbuch
+
+== Einleitung
+
+== Architektur
 
